@@ -1,4 +1,4 @@
-[FW Mem Guard](index.html) · [English guide](START_HERE_EN.md) · <a href="START_HERE_HE.html" lang="he">עברית</a> · [Privacy](PRIVACY.md)
+[FW Mem Guard](index.html) · [English guide](START_HERE_EN.html) · <a href="START_HERE_HE.html" lang="he">עברית</a> · [Privacy](PRIVACY.html)
 
 # FW Mem Guard Support
 
@@ -45,7 +45,7 @@ Review paths and identifiers before sharing. Start with the diagnostic text. Do 
 
 ## Preview scope
 
-Local Windows x64 and macOS Intel/Apple Silicon (macOS 15+ for these packages); guided WSL access on Windows. GNU ld Map with GNU Arm ELF32 little-endian, one active Flash and one active RAM region. Maximum 64 MiB per ELF and 32 MiB per Map. Remote-SSH, Dev Containers, Codespaces, Linux-native execution, IAR/Keil and object/symbol attribution are not supported.
+Local Windows x64 and macOS Intel/Apple Silicon (native CLI/package checks on macOS 15.7.9; macOS 13/14 unverified); guided WSL access on Windows. GNU ld Map with GNU Arm ELF32 little-endian, one active Flash and one active RAM region. Maximum 64 MiB per ELF and 32 MiB per Map. Remote-SSH, Dev Containers, Codespaces, Linux-native execution, IAR/Keil and object/symbol attribution are not supported.
 
 <span class="small">Publisher: FW Mem Guard · Extension ID: fwmemguard.fw-mem-guard · Local processing; no automatic telemetry or report upload. Use the support address below or the public issue forms.</span>
 

@@ -26,8 +26,12 @@ jobs:
       - name: Stage public documentation only
         run: |
           mkdir site
-          cp index.html START_HERE_EN.html START_HERE_HE.html SUPPORT.html PRIVACY.html site.css robots.txt site/
+          cp index.html REAL_FIRMWARE.html START_HERE_EN.html START_HERE_HE.html SUPPORT.html PRIVACY.html site.css robots.txt site/
           if [ -f sitemap.xml ]; then cp sitemap.xml site/; fi
+          mkdir site/samples
+          for asset in micropython-f411-v1.24.1.zip micropython-f411-v1.24.1.zip.sha256 verification.json verified-reference-sections.csv baseline-objdump.txt current-objdump.txt; do
+            cp "samples/$asset" site/samples/
+          done
           mkdir site/media
           for asset in icon.png store-hero.png demo-poster.png demo-preview.gif fw-mem-guard-demo.mp4 demo-en.vtt demo-he.vtt demo-transcript.html demo-result.json demo-output.txt demo-evidence.json; do
             cp "media/$asset" site/media/

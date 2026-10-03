@@ -1,6 +1,6 @@
 FW Mem Guard 0.3.3 — Quick Start
 
-[FW Mem Guard](index.html) · [English](START_HERE_EN.md) · <a href="START_HERE_HE.html" lang="he">עברית</a> · [Support](SUPPORT.md)
+[FW Mem Guard](index.html) · [English](START_HERE_EN.html) · <a href="START_HERE_HE.html" lang="he">עברית</a> · [Support](SUPPORT.html)
 
 # FW Mem Guard 0.3.3 — Quick Start
 
@@ -22,7 +22,7 @@ Search for `fwmemguard.fw-mem-guard` in VS Code Extensions and select the pre-re
 | Mac Apple Silicon | `fw-mem-guard-0.3.3-darwin-arm64.vsix` |
 | Mac Intel         | `fw-mem-guard-0.3.3-darwin-x64.vsix`   |
 
-For macOS packages, macOS 15 or later is required. In VS Code choose Extensions → … → Install from VSIX, select the matching file, and reload if requested. Confirm version 0.3.3. On WSL, choose the Windows package for the local Windows host.
+Mac native command-line and package checks passed on macOS 15.7.9. Compatibility with macOS 13/14 remains unverified; the 0.3.3 package metadata and bundled guide still declare a 15.0 target. See [Mac validation details](index.html#scope). In VS Code choose Extensions → … → Install from VSIX, select the matching file, and reload if requested. Confirm version 0.3.3. On WSL, choose the Windows package for the local Windows host.
 
 If the binary is blocked by security policy, stop and share the error. Do not disable protections or change quarantine settings.
 

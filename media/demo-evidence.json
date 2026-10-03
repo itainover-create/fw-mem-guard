@@ -61,12 +61,12 @@
     "examples/demo-profile.json": "9188b2ffaa73f2c075253949076e93684ed0c68d59b57304c0dbf9017d74f553",
     "src/report.js": "e251f4092f11ec09eb745f505a65f4afb1d41f34252acccc714daa04aee20734",
     "src/shareable-report.js": "78a0e7a1171cee41d0a5d50e05fa35998a2692e34335cc3c09f10e6ff8779b39",
-    "scripts/demo-presentation.html": "03fbe24bc52898792eb22f56173da204ed41e159dbf7da0a2d34a98f3377f52c"
+    "scripts/demo-presentation.html": "f2e23d27d3dd2fcef76d77ce478ea615b0708ad0c3b6f2c4fdddbf94e2daabc0"
   },
   "media_sha256": {
     "demo-poster.png": "daf07c48e429e7a25d03be2d5f8cbf40592c934ce40099b2c6e90697a04c3944",
-    "fw-mem-guard-demo.mp4": "3baad8184039e46faaa8a3c7178edf3ecf9d760e7a4418304a95cca448c24a12",
-    "demo-preview.gif": "a9719611be76d83e6c05141bbdad400ec9e089a51b5cb269731682d2ad7a353a",
+    "fw-mem-guard-demo.mp4": "a76694d71118691fcfeedce274e84f32907274627efc7595375a9b5e736bff54",
+    "demo-preview.gif": "38f82c94a96294384f6014a829c7bb3838b946674e41ea0d7679157738ecadf7",
     "store-hero.png": "a631962be98ec4295b494f495811e3aafac1b182dd9dd12dc19b6308db66d116",
     "icon.png": "03830ae2eb64c44e44b130c7caa84f1d2c9cf6238c05f5fb6b17a89e2a46ede5"
   }

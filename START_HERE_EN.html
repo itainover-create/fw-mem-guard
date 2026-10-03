@@ -3,7 +3,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>FW Mem Guard 0.3.3 — Quick Start</title>
-<style>body{font:17px/1.65 system-ui,sans-serif;max-width:960px;margin:35px auto;padding:0 24px;color:#14283b;background:#f7f9fc}h1,h2{line-height:1.25}h2{margin-top:32px}pre{direction:ltr;text-align:left;white-space:pre-wrap;overflow-wrap:anywhere;background:#e8eef5;padding:16px;border-radius:9px}code{font-family:Consolas,monospace}table{border-collapse:collapse;width:100%}td,th{border:1px solid #c8d2df;padding:8px;text-align:start}a{color:#1453a0}.note{border-inline-start:4px solid #d88b16;padding:12px;background:#fff2d8}li{margin:8px 0}</style>
+<style>body{font:17px/1.65 system-ui,sans-serif;max-width:960px;margin:35px auto;padding:0 24px;color:#14283b;background:#f7f9fc}h1,h2{line-height:1.25}h2{margin-top:32px}pre{direction:ltr;text-align:left;white-space:pre-wrap;overflow-wrap:anywhere;background:#e8eef5;padding:16px;border-radius:9px}code{font-family:Consolas,monospace;overflow-wrap:anywhere}table{border-collapse:collapse;width:100%}td,th{border:1px solid #c8d2df;padding:8px;text-align:start}a{color:#1453a0}.note{border-inline-start:4px solid #d88b16;padding:12px;background:#fff2d8}li{margin:8px 0}</style>
 <body>
 <nav aria-label="Documentation"><a href="index.html">FW Mem Guard</a> · <a href="START_HERE_EN.html">English</a> · <a href="START_HERE_HE.html" lang="he">עברית</a> · <a href="SUPPORT.html">Support</a></nav>
 <h1>FW Mem Guard 0.3.3 — Quick Start</h1>
@@ -39,7 +39,7 @@
 </td>
 </tr>
 </table>
-<p>For macOS packages, macOS 15 or later is required. In VS Code choose Extensions → … → Install from VSIX, select the matching file, and reload if requested. Confirm version 0.3.3. On WSL, choose the Windows package for the local Windows host.</p>
+<p>Mac native command-line and package checks passed on macOS 15.7.9. Compatibility with macOS 13/14 remains unverified; the 0.3.3 package metadata and bundled guide still declare a 15.0 target. See <a href="index.html#scope">Mac validation details</a>. In VS Code choose Extensions → … → Install from VSIX, select the matching file, and reload if requested. Confirm version 0.3.3. On WSL, choose the Windows package for the local Windows host.</p>
 <p>If the binary is blocked by security policy, stop and share the error. Do not disable protections or change quarantine settings.</p>
 <h2>2. Run the example</h2>
 <p>Open a folder you control and trust it when prompted. Press Ctrl+Shift+P (Mac: Cmd+Shift+P) and run <b>FW Mem Guard: Run Demo</b>. Expected: BUDGET_EXCEEDED, engine exit 2. The example intentionally exceeds its limits and is not validation of your project.</p>

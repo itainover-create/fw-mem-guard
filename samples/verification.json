@@ -1,0 +1,164 @@
+{
+  "status": "PASS",
+  "extension_source_version": "0.3.3",
+  "verification_method": "GNU objdump section headers checked against supplied CSV, guided Map/ELF validation and source-engine CLI; firmware not executed or rebuilt",
+  "objdump_version": "GNU objdump (GNU Binutils for Debian) 2.44",
+  "input_sha256": {
+    "baseline/firmware.elf": "2bb4b6f32825b0acd724691361295c8f2c36ce3a94fd5c63f1cd9866269f9509",
+    "baseline/firmware.map": "3f349ce68a5aaa6cf78f00360bf48979e0c4a50b80afb97e11b28450ef9cac51",
+    "current/firmware.elf": "21cac4c2a7973d44c5bd93f6d3987c0a33532115543e029a89ebb588f43557b3",
+    "current/firmware.map": "280f30e4eebaf0bf4f004bb18e443b66a76b3d012f6654ead0943294c4d1c17b",
+    "change.patch": "5f1a3fc8129d0abd0c8da13642be48e375df1c27c278e6a232b3e581f46529f4",
+    "expected_reference_sections.csv": "1cb4798580842f7b62fe834cc57215a3b3cd1dda4393b6cfdea5681dbdaf3ef6",
+    "README_HE.md": "c0fd680fc7877a67a3a86644c9a98d2c2f551a7c9af2ff437a6b5edf7c8f3b41",
+    "LICENSE_MicroPython.txt": "74111c31aa66f05e5dbd3f9f303653dfda1aa85b8525941afb115e62e3f3d18a"
+  },
+  "source_sha256": {
+    "engine/fw_memguard.py": "1fea8a1f08fe791841d51675212bd8dbcb82686505317bb160b45aba8fe38b68",
+    "src/project-evidence.js": "ce074558bb6d4a65b7e0da945be4d8a81f6a8a4b2ea85a6ae8212e5bf5971453"
+  },
+  "reference_totals": {
+    "baseline": {
+      "flash": 292212,
+      "ram": 22440,
+      "ram_reservations": 18432,
+      "ram_without_reservations": 4008
+    },
+    "current": {
+      "flash": 300452,
+      "ram": 26536,
+      "ram_reservations": 18432,
+      "ram_without_reservations": 8104
+    }
+  },
+  "cases": {
+    "comparison": {
+      "baseline": {
+        "flash": 292212,
+        "ram": 22440
+      },
+      "current": {
+        "flash": 300452,
+        "ram": 26536
+      },
+      "delta": {
+        "flash": 8240,
+        "ram": 4096
+      },
+      "status": "pass"
+    },
+    "same_build": {
+      "baseline": {
+        "flash": 292212,
+        "ram": 22440
+      },
+      "current": {
+        "flash": 292212,
+        "ram": 22440
+      },
+      "delta": {
+        "flash": 0,
+        "ram": 0
+      },
+      "status": "pass"
+    },
+    "reverse": {
+      "baseline": {
+        "flash": 300452,
+        "ram": 26536
+      },
+      "current": {
+        "flash": 292212,
+        "ram": 22440
+      },
+      "delta": {
+        "flash": -8240,
+        "ram": -4096
+      },
+      "status": "pass"
+    }
+  },
+  "guided_classes": [
+    [
+      ".ARM",
+      "flash"
+    ],
+    [
+      ".ARM.attributes",
+      "ignore"
+    ],
+    [
+      ".bss",
+      "ram_zero"
+    ],
+    [
+      ".comment",
+      "ignore"
+    ],
+    [
+      ".data",
+      "ram_initialized"
+    ],
+    [
+      ".debug_abbrev",
+      "ignore"
+    ],
+    [
+      ".debug_aranges",
+      "ignore"
+    ],
+    [
+      ".debug_frame",
+      "ignore"
+    ],
+    [
+      ".debug_info",
+      "ignore"
+    ],
+    [
+      ".debug_line",
+      "ignore"
+    ],
+    [
+      ".debug_line_str",
+      "ignore"
+    ],
+    [
+      ".debug_loclists",
+      "ignore"
+    ],
+    [
+      ".debug_macro",
+      "ignore"
+    ],
+    [
+      ".debug_rnglists",
+      "ignore"
+    ],
+    [
+      ".debug_str",
+      "ignore"
+    ],
+    [
+      ".heap",
+      "ram_zero"
+    ],
+    [
+      ".isr_vector",
+      "ram_initialized"
+    ],
+    [
+      ".stack",
+      "ram_zero"
+    ],
+    [
+      ".text",
+      "flash"
+    ]
+  ],
+  "wrong_subregion": {
+    "rejected": true,
+    "reason": "Region coverage: .isr_vector LMA/load (Flash) [0x8000000, 0x8000420) (1056 bytes) is not covered by the selected regions. Flash: FLASH_TEXT [0x8020000, 0x8080000) \u2014 393,216 bytes; RAM: RAM [0x20000000, 0x2001c000) \u2014 114,688 bytes. Run Set Up / Update Project and choose regions covering all required VMA/run and LMA/load ranges. A wrong subregion selection does not establish multiple active banks."
+  },
+  "native_gui_acceptance": "NOT_TESTED"
+}

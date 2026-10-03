@@ -1,6 +1,6 @@
 FW Mem Guard 0.3.3 — התחלה מהירה
 
-[FW Mem Guard](index.html) · [English](START_HERE_EN.md) · <a href="START_HERE_HE.html" lang="he">עברית</a> · [Support](SUPPORT.md)
+[FW Mem Guard](index.html) · [English](START_HERE_EN.html) · <a href="START_HERE_HE.html" lang="he">עברית</a> · [Support](SUPPORT.html)
 
 # FW Mem Guard 0.3.3 — התחלה מהירה
 
@@ -22,7 +22,7 @@ FW Mem Guard 0.3.3 — התחלה מהירה
 | Mac Apple Silicon | `fw-mem-guard-0.3.3-darwin-arm64.vsix` |
 | Mac Intel         | `fw-mem-guard-0.3.3-darwin-x64.vsix`   |
 
-בחר את החבילה שמתאימה למחשב שעליו פועל VS Code. חבילות Mac דורשות macOS 15 ומעלה. בחלונית Extensions לחץ … ואז Install from VSIX. בחר את הקובץ המתאים ואשר טעינה מחדש אם תתבקש. ודא שמוצגת גרסה 0.3.3. עבור WSL ב־Windows מתקינים את חבילת Windows בצד המקומי.
+בחר את החבילה שמתאימה למחשב שעליו פועל VS Code. בדיקות שורת הפקודה והחבילות ב־Mac עברו על macOS 15.7.9. התאימות לגרסאות 13 ו־14 טרם אומתה; המטא־נתונים והמדריך הכלול בחבילות 0.3.3 עדיין מציינים יעד 15.0. ראו [פרטי האימות ל־Mac](index.html#scope). בחלונית Extensions לחץ … ואז Install from VSIX. בחר את הקובץ המתאים ואשר טעינה מחדש אם תתבקש. ודא שמוצגת גרסה 0.3.3. עבור WSL ב־Windows מתקינים את חבילת Windows בצד המקומי.
 
 אם מדיניות האבטחה חוסמת את המנוע, עצור ושלח את השגיאה. אין לכבות הגנות או להסיר quarantine כדי לעקוף חסימה.
 

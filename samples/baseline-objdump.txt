@@ -1,0 +1,43 @@
+
+baseline/firmware.elf:     file format elf32-little
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .isr_vector   00000420  20000000  08000000  00001000  2**3
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  1 .text         0004711c  08020000  08020000  00002000  2**3
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  2 .ARM          00000008  0806711c  0806711c  0004911c  2**2
+                  CONTENTS, ALLOC, LOAD, READONLY, DATA
+  3 .data         00000030  20000420  08067124  00049420  2**2
+                  CONTENTS, ALLOC, LOAD, DATA
+  4 .bss          00000b58  20000450  08067154  00049450  2**2
+                  ALLOC
+  5 .heap         00004000  20000fa8  08067154  00049fa8  2**0
+                  ALLOC
+  6 .stack        00000800  20004fa8  08067154  00049fa8  2**0
+                  ALLOC
+  7 .ARM.attributes 00000037  00000000  00000000  00049450  2**0
+                  CONTENTS, READONLY
+  8 .comment      00000026  00000000  00000000  00049487  2**0
+                  CONTENTS, READONLY
+  9 .debug_info   00227bef  00000000  00000000  000494ad  2**0
+                  CONTENTS, READONLY, DEBUGGING, OCTETS
+ 10 .debug_abbrev 0003282f  00000000  00000000  0027109c  2**0
+                  CONTENTS, READONLY, DEBUGGING, OCTETS
+ 11 .debug_loclists 0006be01  00000000  00000000  002a38cb  2**0
+                  CONTENTS, READONLY, DEBUGGING, OCTETS
+ 12 .debug_aranges 00006920  00000000  00000000  0030f6d0  2**3
+                  CONTENTS, READONLY, DEBUGGING, OCTETS
+ 13 .debug_rnglists 0000a5ba  00000000  00000000  00315ff0  2**0
+                  CONTENTS, READONLY, DEBUGGING, OCTETS
+ 14 .debug_macro  00060c04  00000000  00000000  003205aa  2**0
+                  CONTENTS, READONLY, DEBUGGING, OCTETS
+ 15 .debug_line   000e7304  00000000  00000000  003811ae  2**0
+                  CONTENTS, READONLY, DEBUGGING, OCTETS
+ 16 .debug_str    000f8785  00000000  00000000  004684b2  2**0
+                  CONTENTS, READONLY, DEBUGGING, OCTETS
+ 17 .debug_frame  00013768  00000000  00000000  00560c38  2**2
+                  CONTENTS, READONLY, DEBUGGING, OCTETS
+ 18 .debug_line_str 000000b0  00000000  00000000  005743a0  2**0
+                  CONTENTS, READONLY, DEBUGGING, OCTETS
