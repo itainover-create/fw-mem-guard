@@ -1,0 +1,13 @@
+name: Usage question
+description: Ask about setup, budgets or interpreting a report.
+body:
+  - type: markdown
+    attributes:
+      value: "This is public. Do not attach firmware artifacts, proprietary source or credentials."
+  - type: textarea
+    id: question
+    attributes:
+      label: Question and context
+      description: Your goal, installed extension version, platform, command and relevant diagnostic text with private paths removed.
+    validations:
+      required: true

@@ -1,0 +1,47 @@
+name: Publish public support pages
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: support-pages
+  cancel-in-progress: false
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/configure-pages@v5
+      - name: Stage public documentation only
+        run: |
+          mkdir site
+          cp index.html START_HERE_EN.html START_HERE_HE.html SUPPORT.html PRIVACY.html site.css robots.txt site/
+          if [ -f sitemap.xml ]; then cp sitemap.xml site/; fi
+          mkdir site/media
+          for asset in icon.png store-hero.png demo-poster.png demo-preview.gif fw-mem-guard-demo.mp4 demo-en.vtt demo-he.vtt demo-transcript.html demo-result.json demo-output.txt demo-evidence.json; do
+            cp "media/$asset" site/media/
+          done
+          if [ -f screenshots/guided-setup.png ]; then
+            mkdir -p site/screenshots
+            cp screenshots/guided-setup.png site/screenshots/
+          fi
+          if [ -f screenshots/budget-report.png ]; then
+            mkdir -p site/screenshots
+            cp screenshots/budget-report.png site/screenshots/
+          fi
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+      - uses: actions/deploy-pages@v4
+        id: deployment

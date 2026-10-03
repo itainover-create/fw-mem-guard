@@ -1,0 +1,14 @@
+BUDGET_EXCEEDED
+Configured budget exceeded.
+
+FLASH  +51,200 bytes  (720,896 -> 772,096)
+RAM  +27,136 bytes  (176,640 -> 203,776)
+
+BUDGET CHECKS — effective limits for this run
+FLASH allocated sections: 772,096 <= 1,048,576 bytes — OK
+FLASH growth: 51,200 > 16,384 bytes — EXCEEDED
+RAM allocated sections: 203,776 <= 262,144 bytes — OK
+RAM growth: 27,136 > 4,096 bytes — EXCEEDED
+
+Accounting: configured linker profile; allocated output-section bytes.
+Object/symbol attribution: not available.

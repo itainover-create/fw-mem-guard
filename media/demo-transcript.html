@@ -1,0 +1,14 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>FW Mem Guard — Demo transcript</title><link rel="stylesheet" href="../site.css"></head><body><main class="doc-shell"><a href="../index.html#demo">Back to the demo</a><h1>42-second demo transcript</h1><p>Illustrated walkthrough using actual bundled demo results. Not a recording of VS Code. The demo is a manual-profile comparison; guided Map/ELF setup is a separate workflow.</p><h2>00:00:00 — Your build grew. Know by how much.</h2><p>Install the pre-release. Open a trusted folder. Run FW Mem Guard: Run Demo.</p><h2>00:00:07 — See the change. In exact bytes.</h2><p>Flash grows by 51,200 bytes. RAM grows by 27,136 bytes. This is allocated section memory, not runtime peak use.</p><h2>00:00:16 — Fits in memory. Still over the growth budget.</h2><p>Both total-usage checks pass. Both growth limits fail intentionally. BUDGET_EXCEEDED is expected, not an installation error.</p><h2>00:00:26 — Review first. Share only if you choose.</h2><p>The reduced JSON opens in an unsaved editor tab. Review it before Save As. The extension does not upload it.</p><h2>00:00:36 — Your firmware. Your computer. Your limits.</h2><p>Install FW Mem Guard from Visual Studio Marketplace. Guided project setup supports GNU ld and ARM ELF32 little-endian, one Flash/RAM pair.</p><h2>Exact output</h2><pre>BUDGET_EXCEEDED
+Configured budget exceeded.
+
+FLASH  +51,200 bytes  (720,896 -&gt; 772,096)
+RAM  +27,136 bytes  (176,640 -&gt; 203,776)
+
+BUDGET CHECKS — effective limits for this run
+FLASH allocated sections: 772,096 &lt;= 1,048,576 bytes — OK
+FLASH growth: 51,200 &gt; 16,384 bytes — EXCEEDED
+RAM allocated sections: 203,776 &lt;= 262,144 bytes — OK
+RAM growth: 27,136 &gt; 4,096 bytes — EXCEEDED
+
+Accounting: configured linker profile; allocated output-section bytes.
+Object/symbol attribution: not available.</pre><p><a href="demo-result.json">Reduced demo report</a>. Its capture time is fixed for reproducible presentation, not a live run timestamp.</p></main></body></html>

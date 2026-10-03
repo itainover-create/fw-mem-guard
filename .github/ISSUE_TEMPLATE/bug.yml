@@ -1,0 +1,26 @@
+name: Problem report
+description: Report an installation, setup or comparison problem.
+title: "[Problem] "
+body:
+  - type: markdown
+    attributes:
+      value: "Public report: include diagnostic text only after reviewing paths. Do not upload source, Map, ELF, credentials or customer artifacts."
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      description: Installed extension version, OS/architecture, VS Code version, local or WSL, and how you found the tool.
+    validations:
+      required: true
+  - type: textarea
+    id: behavior
+    attributes:
+      label: What worked and the first blocker
+      description: Exact command, expected behavior, actual output and steps to reproduce. Include totals/limits only if safe to share.
+    validations:
+      required: true
+  - type: textarea
+    id: usage
+    attributes:
+      label: Use on a real project
+      description: Was this a demo or real comparison? Have you used Repeat? What would you want to block automatically?

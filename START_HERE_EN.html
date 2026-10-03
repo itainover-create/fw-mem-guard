@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FW Mem Guard 0.3.3 — Quick Start</title>
+<style>body{font:17px/1.65 system-ui,sans-serif;max-width:960px;margin:35px auto;padding:0 24px;color:#14283b;background:#f7f9fc}h1,h2{line-height:1.25}h2{margin-top:32px}pre{direction:ltr;text-align:left;white-space:pre-wrap;overflow-wrap:anywhere;background:#e8eef5;padding:16px;border-radius:9px}code{font-family:Consolas,monospace}table{border-collapse:collapse;width:100%}td,th{border:1px solid #c8d2df;padding:8px;text-align:start}a{color:#1453a0}.note{border-inline-start:4px solid #d88b16;padding:12px;background:#fff2d8}li{margin:8px 0}</style>
+<body>
+<nav aria-label="Documentation"><a href="index.html">FW Mem Guard</a> · <a href="START_HERE_EN.html">English</a> · <a href="START_HERE_HE.html" lang="he">עברית</a> · <a href="SUPPORT.html">Support</a></nav>
+<h1>FW Mem Guard 0.3.3 — Quick Start</h1>
+<p>
+<b>Help inside VS Code:</b> Open the Command Palette → <code>FW Mem Guard: Open User Guide</code>, then choose English, Hebrew or Support. No browser or internet connection is needed.</p>
+<p>
+<b>Publisher: FW Mem Guard — <code>fwmemguard</code>.</b> Extension ID: <code>fwmemguard.fw-mem-guard</code>. Disable the old <code>fw-mem-guard-pilot.fw-mem-guard</code> extension if installed, then use Open Project to reopen your existing project file. Previous workspace selections may not carry over. Project files remain unchanged.</p>
+<p>Install the VS Code extension, then compare completed firmware builds. No Python or separate installer is required.</p>
+<p>This guide accompanies the 0.3.3 pre-release packages for Windows x64, Mac Apple Silicon and Mac Intel. The extension and engine 0.1.0-pilot.1 have separate version numbers.</p>
+<h2>1. Install the right package</h2>
+<p>Search for <code>fwmemguard.fw-mem-guard</code> in VS Code Extensions and select the pre-release offered by the Marketplace. For a supplied candidate, use Install from VSIX with the matching file below.</p>
+<table>
+<tr>
+<th>Computer</th>
+<th>VSIX</th>
+</tr>
+<tr>
+<td>Windows x64</td>
+<td>
+<code>fw-mem-guard-0.3.3-win32-x64.vsix</code>
+</td>
+</tr>
+<tr>
+<td>Mac Apple Silicon</td>
+<td>
+<code>fw-mem-guard-0.3.3-darwin-arm64.vsix</code>
+</td>
+</tr>
+<tr>
+<td>Mac Intel</td>
+<td>
+<code>fw-mem-guard-0.3.3-darwin-x64.vsix</code>
+</td>
+</tr>
+</table>
+<p>For macOS packages, macOS 15 or later is required. In VS Code choose Extensions → … → Install from VSIX, select the matching file, and reload if requested. Confirm version 0.3.3. On WSL, choose the Windows package for the local Windows host.</p>
+<p>If the binary is blocked by security policy, stop and share the error. Do not disable protections or change quarantine settings.</p>
+<h2>2. Run the example</h2>
+<p>Open a folder you control and trust it when prompted. Press Ctrl+Shift+P (Mac: Cmd+Shift+P) and run <b>FW Mem Guard: Run Demo</b>. Expected: BUDGET_EXCEEDED, engine exit 2. The example intentionally exceeds its limits and is not validation of your project.</p>
+<h2>3. Set up your project once</h2>
+<ol>
+<li>Run <b>Set Up / Update Project</b>.</li>
+<li>Select baseline.map + its matching baseline.elf, then current.map + its matching current.elf. Use successful completed builds and distinct baseline/current files.</li>
+<li>Review each Flash/RAM candidate: start/end addresses, capacity and coverage of VMA/run and LMA/load sections in both builds. A unique compatible region is suggested; confirm it explicitly. If multiple overlapping containers fit, choose explicitly. Unavailable choices name the uncovered section and address. One active region of each type is supported.</li>
+<li>Enter maximum total bytes and allowed growth bytes for both regions. A growth limit of 0 forbids any positive growth; it does not disable checks.</li>
+<li>Review and choose Validate and Save. Use a new filename such as <code>board.fwmg.json</code>. One suffix is retained for new files. An existing file is never overwritten by new setup.</li>
+</ol>
+<h2>4. Daily use and budgets</h2>
+<p>After each completed build run <b>Compare Builds</b> or <b>Repeat Last Comparison</b>. Keep baseline files unchanged. To change limits, use <b>FW Mem Guard: Edit Budgets</b>: select an existing project if none is active, enter four values and Validate and Save. No new filename is requested. To change artifact paths or intentionally replace the baseline, use Set Up / Update Project → Update active project.</p>
+<p>To reopen, run <b>Open Project</b> and select the existing .fwmg.json file. Existing names with duplicate suffixes still work; do not create another project just to edit budgets.</p>
+<h2>5. WSL on Windows</h2>
+<ol>
+<li>Install Microsoft WSL in VS Code and connect to your distribution/project folder.</li>
+<li>Confirm the bottom-left indicator says <b>WSL: …</b>. Trust this folder separately if prompted.</li>
+<li>Use the guided commands and the remote picker. Save the project in the same WSL filesystem as its four artifacts.</li>
+<li>In report DETAILS, artifact references should start with <code>vscode-remote://wsl</code>. Encoded <code>%2B</code> is normal.</li>
+</ol>
+<p>FW Mem Guard runs on the Windows UI host; no Linux engine or Python installation is needed in WSL. If the connection/window closes, reconnect, open the saved project and repeat. Input reading has a 30-second limit and a Cancel button. After timeout/cancel, no late result is accepted. Reconnect and retry. VS Code may continue the underlying filesystem request; this is not a promise that closing VS Code is prevented. The limit excludes selection, engine execution and saving. User setting: <code>fwMemGuard.inputReadTimeoutSeconds</code> (1–300 seconds).</p>
+<h2>6. Read the outcome</h2>
+<ul>
+<li>
+<b>PASS / exit 0:</b> all configured comparison budgets passed.</li>
+<li>
+<b>BUDGET_EXCEEDED / exit 2:</b> at least one effective limit was exceeded.</li>
+<li>
+<b>ERROR:</b> no valid result for this operation. Validation can stop before the engine runs, so an engine exit code may be absent.</li>
+<li>
+<b>ANALYZED:</b> totals only; budgets were not checked. In an active project, both pairs are validated and the CURRENT Map is analyzed; its path is printed in Output.</li>
+</ul>
+<h2>7. Export a report for support</h2>
+<p>After a completed comparison or Analyze, run <b>FW Mem Guard: Export Report for Sharing</b>. The report opens first in a new, unsaved editor tab; no report file is created on disk. Review its contents, then use <b>Save As</b> to save <code>result.fwmg-report.json</code> if you choose to share it. This command is available from version 0.3.2; it is absent from 0.3.1.</p>
+<p>The export includes memory totals, effective limits, result/context, component versions and capture time. It excludes paths, filenames, symbols, section names, addresses and input hashes. Usage and limits may still be sensitive. The extension does not upload it. If you attach it to a support email, your email provider and the recipient receive what you send. Share only what your organization permits.</p>
+<p>Demo reports remain labeled examples; Analyze has no budget verdict. A new project/profile operation clears the exportable result, including failure or cancellation. Help and Output preserve it. After a reload, run again. Previously opened or saved reports remain static snapshots and do not update automatically.</p>
+<h2>Limits and troubleshooting</h2>
+<p>For support after a completed run, use <b>Export Report for Sharing</b>, review the new editor tab, then save and attach the reduced report to an email using the address on the Support page. A failed run has no new export: describe the error and review any diagnostic text before sending it. Do not attach Map/ELF files or source code.</p>
+<p>64 MiB per ELF; 32 MiB per Map. GNU Arm ELF32 little-endian + GNU ld. One Flash and one RAM bank. No SSH, Containers, Linux native, IAR/Keil, or object/symbol attribution. Full ELF files are read, including debug data; do not strip artifacts just to bypass validation limits.</p>
+<p>Mismatch: select Map/ELF from the same completed build. Missing/empty file: fix the build inputs and repeat. Existing project: Open Project, then Edit Budgets. Trust error: approve only a folder you control using Workspaces: Manage Workspace Trust. Open Output for full diagnostics.</p>
+<p>Manual Profile Comparison requires a reviewed engine JSON, not a .fwmg.json project, and is local-only. Guided WSL use does not require a UNC allowlist. For the optional local-window UNC route, allow only the specific WSL host in security.allowedUNCHosts and keep UNC restrictions enabled.</p>
+<!-- PUBLIC_SUPPORT_START -->
+<p>Support: <code>fwmemguard.support@gmail.com</code></p>
+<!-- PUBLIC_SUPPORT_END -->
+<p>While a previous read of the same URI remains pending, retries show an explicit error and do not start another transfer. After it settles and connectivity returns, retry reads fresh input.</p>
+<p>If the pending-read message persists, save your work and run Developer: Reload Window from the Command Palette. Reconnect to WSL, open the saved project and compare again. Reload resets extension state; it does not repair an unavailable connection.</p>
+<h2>Example and accounting</h2>
+<pre>BUDGET_EXCEEDED
+Configured budget exceeded.
+
+FLASH  +51,200 bytes  (720,896 -&gt; 772,096)
+RAM  +27,136 bytes  (176,640 -&gt; 203,776)
+
+BUDGET CHECKS — effective limits for this run
+FLASH allocated sections: 772,096 &lt;= 1,048,576 bytes — OK
+FLASH growth: 51,200 &gt; 16,384 bytes — EXCEEDED
+RAM allocated sections: 203,776 &lt;= 262,144 bytes — OK
+RAM growth: 27,136 &gt; 4,096 bytes — EXCEEDED
+
+Accounting: configured linker profile; allocated output-section bytes.
+Object/symbol attribution: not available.</pre>
+<p>Bundled demo data. The report prints each checked value and limit. Initialized RAM is counted once in RAM and once for its Flash load image. Heap/stack reservations are not measured runtime usage. Structural Map/ELF agreement does not establish common build provenance or an atomic snapshot. Guided validation is currently in the extension, not a standalone Map/ELF CLI contract.</p>
+<p>Support opens its own bundled page through Open User Guide → Support. Copy the support address into your email service; no reports, telemetry or firmware files are uploaded automatically.</p>
+</body>
+</html>

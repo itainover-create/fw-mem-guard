@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>FW Mem Guard — Support</title>
+<style>body{font:17px/1.65 system-ui,sans-serif;background:#f5f8fc;color:#14283b;max-width:860px;margin:36px auto;padding:0 24px}h1,h2{line-height:1.3}a{color:#075db2}pre{white-space:pre-wrap;background:#e7eef6;border-radius:8px;padding:18px;font-size:14px}li{margin:8px 0}.contact{background:#fff;border:1px solid #c8d8e8;border-radius:12px;padding:20px}small{color:#425b70}</style></head>
+<body><nav aria-label="Documentation"><a href="index.html">FW Mem Guard</a> · <a href="START_HERE_EN.html">English guide</a> · <a href="START_HERE_HE.html" lang="he">עברית</a> · <a href="PRIVACY.html">Privacy</a></nav><h1>FW Mem Guard Support</h1><p>Help with installation, project setup and Flash/RAM comparisons. Guide for the 0.3.3 pre-release; engine 0.1.0-pilot.1.</p>
+<div class="contact"><b>Contact</b><!-- PUBLIC_SUPPORT_START -->
+<p>Support: <code>fwmemguard.support@gmail.com</code></p>
+<!-- PUBLIC_SUPPORT_END --><p>Copy this address into your email service to report a problem or share feedback. The extension does not send reports or files automatically.</p></div>
+<p><a href="https://github.com/itainover-create/fw-mem-guard/issues/new/choose">Open a public problem report or question</a>. Public issues are visible to everyone. Include only reviewed information you are authorized to share.</p><h2>Before reporting a problem</h2><ul>
+<li><b>Demo shows BUDGET_EXCEEDED / exit 2:</b> this is expected. The bundled example intentionally exceeds its budgets.</li>
+<li><b>Project comparison shows BUDGET_EXCEEDED:</b> read the effective limits. Use Edit Budgets only when changing your intended policy.</li>
+<li><b>Manual profile error:</b> a .fwmg.json project belongs in Open Project, not Manual Profile Comparison.</li>
+<li><b>Map/ELF mismatch:</b> select matching artifacts from the same completed build, then repeat.</li>
+<li><b>Missing or incomplete file:</b> wait for the build to finish, correct the input paths and repeat.</li>
+<li><b>WSL read remains pending:</b> reconnect. If it stays stuck, save your work, run Developer: Reload Window, then Open Project and compare again.</li>
+<li><b>Blocked native executable:</b> include the exact error. Follow your organization's IT policy; do not disable security controls to run the preview.</li>
+</ul><h2>What to include</h2><p>Include this short template in your email. Copy the relevant diagnostic from FW Mem Guard: Open Output.</p>
+<pre>Extension version (copy installed version):
+OS and processor: Windows x64 / macOS Apple Silicon / macOS Intel
+VS Code version:
+Workspace: local / WSL
+Command used:
+Expected result:
+Actual result and full error:
+What worked before the first blocker:
+Steps to reproduce:
+Map and ELF sizes (if relevant):
+</pre>
+<p>Review paths and identifiers before sharing. Start with the diagnostic text. Do not attach proprietary source, Map or ELF files unless you are authorized to share them. Do not send passwords or access tokens.</p>
+<h2>Preview scope</h2><p>Local Windows x64 and macOS Intel/Apple Silicon (macOS 15+ for these packages); guided WSL access on Windows. GNU ld Map with GNU Arm ELF32 little-endian, one active Flash and one active RAM region. Maximum 64 MiB per ELF and 32 MiB per Map. Remote-SSH, Dev Containers, Codespaces, Linux-native execution, IAR/Keil and object/symbol attribution are not supported.</p>
+<p><small>Publisher: FW Mem Guard · Extension ID: fwmemguard.fw-mem-guard · Local processing; no automatic telemetry or report upload. Use the support address below or the public issue forms.</small></p><h2>Attach a reduced report to a support request</h2><p>After a completed run, use <b>Export Report for Sharing</b>. The report opens first in a new, unsaved editor tab; no report file is created on disk. Review its contents, then use <b>Save As</b> to save a separate <code>.fwmg-report.json</code> file if you choose to attach it to your support email. No file is uploaded automatically.</p><p>Reduced reports exclude paths, filenames and symbols but still reveal memory usage and limits. Share only what your organization permits; your email provider and the recipient receive what you send. There is no need to attach Map/ELF files or source code. Saved reports are static snapshots.</p><p>If a run failed or was cancelled, there is no new report to export. Describe the error and review any diagnostic text before sending it. Run a fresh successful operation when you need a new result.</p></body></html>

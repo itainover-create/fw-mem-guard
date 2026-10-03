@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FW Mem Guard 0.3.3 — התחלה מהירה</title>
+<style>body{font:17px/1.65 system-ui,sans-serif;max-width:960px;margin:35px auto;padding:0 24px;color:#14283b;background:#f7f9fc}h1,h2{line-height:1.25}h2{margin-top:32px}pre{direction:ltr;text-align:left;white-space:pre-wrap;overflow-wrap:anywhere;background:#e8eef5;padding:16px;border-radius:9px}code{font-family:Consolas,monospace}table{border-collapse:collapse;width:100%}td,th{border:1px solid #c8d2df;padding:8px;text-align:start}a{color:#1453a0}.note{border-inline-start:4px solid #d88b16;padding:12px;background:#fff2d8}li{margin:8px 0}</style>
+<body>
+<nav aria-label="Documentation"><a href="index.html">FW Mem Guard</a> · <a href="START_HERE_EN.html">English</a> · <a href="START_HERE_HE.html" lang="he">עברית</a> · <a href="SUPPORT.html">Support</a></nav>
+<h1>FW Mem Guard 0.3.3 — התחלה מהירה</h1>
+<p>
+<b>פתיחת עזרה מתוך VS Code:</b> פתח את חלונית הפקודות → <code>FW Mem Guard: Open User Guide</code> ובחר עברית, אנגלית או Support. המדריך נפתח בלשונית בעורך, ללא צורך בדפדפן או בחיבור לאינטרנט.</p>
+<p>
+<b>המפרסם: FW Mem Guard — <code>fwmemguard</code>.</b> מזהה ההרחבה: <code>fwmemguard.fw-mem-guard</code>. אם מותקנת הרחבת הפיילוט הישנה <code>fw-mem-guard-pilot.fw-mem-guard</code>, השבת אותה לפני הבדיקה כדי למנוע פקודות כפולות. פתח את קובץ הפרויקט הקיים באמצעות Open Project. בחירות שנשמרו בהרחבה הישנה עשויות לא לעבור; קובצי הפרויקט עצמם נשארים ללא שינוי.</p>
+<p>מדריך התקנה ושימוש — 0.3.3 Pre-release. אין צורך ב־Python או במתקין מנוע נפרד.</p>
+<p>מדריך זה מלווה את חבילות 0.3.3 כ־Pre-release עבור Windows x64, Mac Apple Silicon ו־Mac Intel. גרסת ההרחבה וגרסת המנוע 0.1.0-pilot.1 הן גרסאות נפרדות.</p>
+<h2>1. התקנה</h2>
+<p>חפש בחלונית Extensions את <code>fwmemguard.fw-mem-guard</code> ובחר את גרסת ה־Pre-release שמוצעת בחנות. אם קיבלת חבילת מועמדת לבדיקה, התקן את קובץ ה־VSIX המתאים בטבלה.</p>
+<table>
+<tr>
+<th>Computer</th>
+<th>VSIX</th>
+</tr>
+<tr>
+<td>Windows x64</td>
+<td>
+<code>fw-mem-guard-0.3.3-win32-x64.vsix</code>
+</td>
+</tr>
+<tr>
+<td>Mac Apple Silicon</td>
+<td>
+<code>fw-mem-guard-0.3.3-darwin-arm64.vsix</code>
+</td>
+</tr>
+<tr>
+<td>Mac Intel</td>
+<td>
+<code>fw-mem-guard-0.3.3-darwin-x64.vsix</code>
+</td>
+</tr>
+</table>
+<p>בחר את החבילה שמתאימה למחשב שעליו פועל VS Code. חבילות Mac דורשות macOS 15 ומעלה. בחלונית Extensions לחץ … ואז Install from VSIX. בחר את הקובץ המתאים ואשר טעינה מחדש אם תתבקש. ודא שמוצגת גרסה 0.3.3. עבור WSL ב־Windows מתקינים את חבילת Windows בצד המקומי.</p>
+<p>אם מדיניות האבטחה חוסמת את המנוע, עצור ושלח את השגיאה. אין לכבות הגנות או להסיר quarantine כדי לעקוף חסימה.</p>
+<h2>2. בדיקת הדגמה</h2>
+<p>פתח תיקייה שאתה שולט בתוכנה ואשר אמון בה אם תתבקש. לחץ Ctrl+Shift+P (ב־Mac: Cmd+Shift+P) והפעל <b>FW Mem Guard: Run Demo</b>. התוצאה הצפויה היא BUDGET_EXCEEDED וקוד 2 — חריגה מכוונת בדוגמה.</p>
+<h2>3. הגדרת פרויקט פעם אחת</h2>
+<ol>
+<li>הפעל <b>Set Up / Update Project</b>.</li>
+<li>בחר Map ו־ELF תואמים של בניית הבסיס, ואחריהם Map ו־ELF תואמים של הבנייה הנוכחית. השתמש בבניות שהסתיימו ובקבצים נפרדים לבסיס ולנוכחי.</li>
+<li>בדוק את כתובות ההתחלה והסיום, הקיבולת וכיסוי מקטעי VMA/run ו־LMA/load בשתי הבניות. אם קיים אזור מתאים יחיד, תופיע הצעה שדורשת אישור מפורש. אם כמה אזורים חופפים מתאימים, בחר במפורש. אזור לא מתאים מציג את שם המקטע והכתובת שאינם מכוסים. נתמך אזור פעיל אחד מכל סוג.</li>
+<li>הזן גודל מרבי וגידול מרבי בבתים לכל אזור. גידול 0 פירושו שאסור לגדול; הוא אינו מבטל את הבדיקה.</li>
+<li>בדוק את הסיכום ולחץ Validate and Save. שמור בשם חדש כגון <code>board.fwmg.json</code>. בשמירה חדשה נשמרת סיומת אחת. יצירת פרויקט אינה דורסת קובץ קיים.</li>
+</ol>
+<h2>4. עבודה יומיומית ושינוי תקציב</h2>
+<p>לאחר בנייה שהסתיימה הפעל <b>Compare Builds</b> או <b>Repeat Last Comparison</b>. קובצי הבסיס צריכים להישאר קבועים.</p>
+<p>
+<b>לשינוי ספים בלבד הפעל FW Mem Guard: Edit Budgets.</b> אם אין פרויקט פעיל, בחר פרויקט קיים. הזן ארבעה ערכים ולחץ Validate and Save. לא יופיע חלון לבחירת שם חדש.</p>
+<p>לשינוי קבצים או החלפת הבסיס במכוון השתמש ב־Set Up / Update Project → Update active project. לפתיחה מחדש השתמש ב־Open Project. גם פרויקט ישן עם סיומת כפולה נשאר קריא; אין צורך ליצור פרויקט חדש כדי לערוך תקציבים.</p>
+<h2>5. עבודה מתוך WSL</h2>
+<ol>
+<li>התקן את הרחבת WSL של Microsoft ופתח את תיקיית הפרויקט בחיבור להפצת Linux שלך.</li>
+<li>ודא שמופיע <b>WSL: …</b> בפינה השמאלית התחתונה. ייתכן שנדרש אישור אמון נפרד לתיקייה.</li>
+<li>בחר את ארבעת הקבצים בבוחר הקבצים המרוחק ושמור את הפרויקט באותה מערכת קבצים.</li>
+<li>בדוח DETAILS ודא שהנתיבים מתחילים ב־<code>vscode-remote://wsl</code>. הקידוד <code>%2B</code> תקין.</li>
+</ol>
+<p>המנוע פועל ב־Windows; הקבצים המלאים נקראים דרך VS Code לצורך אימות מקומי. אין צורך להתקין Python או מנוע Linux ב־Ubuntu. לאחר סגירת חיבור או חלון, התחבר מחדש, פתח את הפרויקט הקיים והריץ שוב. לשלב קריאת הקלט יש מגבלת זמן של 30 שניות וכפתור Cancel. לאחר ביטול או חריגה מהזמן, תשובה מאוחרת לא תתקבל כתוצאה. התחבר מחדש והריץ שוב. בקשת הקבצים הפנימית של VS Code עשויה להמשיך; אין כאן מניעה של סגירת חלון העורך. המגבלה אינה כוללת בחירת קבצים, הרצת מנוע או שמירה. ההגדרה בהגדרות המשתמש: <code>fwMemGuard.inputReadTimeoutSeconds</code>, בין 1 ל־300 שניות.</p>
+<h2>6. משמעות התוצאה</h2>
+<ul>
+<li>
+<b>PASS וקוד 0:</b> ההשוואה עמדה בתקציבים שהוגדרו.</li>
+<li>
+<b>BUDGET_EXCEEDED וקוד 2:</b> חריגה מאחד הספים המודפסים.</li>
+<li>
+<b>ERROR:</b> אין תוצאה תקפה לפעולה. אימות מוקדם עשוי להיכשל לפני הפעלת המנוע, ולכן לא תמיד מוצג קוד מנוע.</li>
+<li>
+<b>ANALYZED:</b> מוצגים סכומים בלבד; לא בוצעה בדיקת תקציב. בפרויקט פעיל מאומתים שני זוגות הקלט, ומנותח ה־Map הנוכחי בלבד; הנתיב המדויק מופיע בדוח.</li>
+</ul>
+<h2>7. ייצוא דוח לפניית תמיכה</h2>
+<p>לאחר השוואה שהסתיימה או Analyze, הפעל <b>FW Mem Guard: Export Report for Sharing</b>. הדוח נפתח תחילה בלשונית חדשה ולא שמורה בעורך; לא נוצר קובץ דוח בדיסק. עיין בתוכן ורק אז בחר <b>Save As</b> ושמור בשם <code>result.fwmg-report.json</code>, אם החלטת לשתף אותו. הפקודה זמינה החל מגרסה 0.3.2; היא אינה קיימת בגרסה 0.3.1.</p>
+<p>הדוח כולל סכומי זיכרון, ספים, תוצאה וסוג הבדיקה, גרסאות רכיבים וזמן יצירה. הוא אינו כולל נתיבים, שמות קבצים, סמלים, שמות מקטעים, כתובות זיכרון או חתימות קלט. השימוש בזיכרון והספים עדיין עשויים להיות רגישים. ההרחבה אינה מעלה את הדוח. בצירוף לפניית תמיכה בדוא״ל, ספק הדואר והנמען מקבלים את מה ששלחת. שתף רק מידע שמדיניות הארגון מתירה.</p>
+<p>דוח Demo מסומן כהדגמה; דוח Analyze אינו קובע עמידה בתקציב. התחלת פעולה חדשה בפרויקט או בפרופיל מנקה את התוצאה הזמינה לייצוא, גם אם הפעולה נכשלה או בוטלה. עזרה ו־Output משמרים אותה. לאחר טעינה מחדש צריך להריץ שוב. דוח שכבר נפתח או נשמר הוא תמונת מצב ואינו מתעדכן אוטומטית.</p>
+<h2>מגבלות ותקלות שכיחות</h2>
+<p>לפנייה לתמיכה לאחר בדיקה שהסתיימה, אפשר לצרף דוח מצומצם: הפעל <b>Export Report for Sharing</b>, עיין בלשונית שנפתחה ורק אז שמור ושלח לכתובת שבדף Support. לאחר כישלון אין דוח חדש לייצוא; תאר את השגיאה ובדוק כל טקסט אבחון לפני שליחתו. אין צורך לצרף קובצי Map/ELF או קוד מקור.</p>
+<p>עד 64 MiB לכל ELF ועד 32 MiB לכל Map; GNU Arm ELF32 little-endian ו־GNU ld בלבד. ללא SSH, Containers, Linux native, IAR/Keil או ייחוס לאובייקטים וסמלים. כל תוכן ה־ELF נקרא; אין לבצע strip רק כדי לעקוף את מגבלת הגודל.</p>
+<p>אי־התאמה בין Map ל־ELF: בחר תוצרים של אותה בנייה שהסתיימה. קובץ חסר או ריק: תקן את התוצרים והריץ Repeat. קובץ פרויקט כבר קיים: Open Project ואז Edit Budgets. חסימת אמון: Workspaces: Manage Workspace Trust, לתיקייה שאתה מכיר בלבד. פירוט התקלות נמצא ב־Open Output.</p>
+<p>Manual Profile Comparison מיועד ל־JSON של המנוע שנבדק מראש, ולא לקובץ פרויקט .fwmg.json, ופועל רק מקומית. במסלול WSL המחובר אין צורך בהגדרת UNC. במסלול החלופי של חלון Windows מקומי מול UNC יש לאשר רק את מארח WSL המסוים ב־security.allowedUNCHosts, בלי לבטל את ההגנה.</p>
+<!-- PUBLIC_SUPPORT_START -->
+<p>תמיכה: <code>fwmemguard.support@gmail.com</code></p>
+<!-- PUBLIC_SUPPORT_END -->
+<p>כל עוד קריאה קודמת לאותו URI עדיין תלויה, ניסיון חוזר יידחה בהודעה מפורשת ולא יפתח העברה נוספת. לאחר שהבקשה מסתיימת והחיבור מתאושש, הרץ שוב; הקלט ייקרא מחדש.</p>
+<p>אם הודעת הקריאה התלויה אינה נעלמת, שמור עבודה והפעל Ctrl+Shift+P → Developer: Reload Window. לאחר חידוש חיבור WSL, פתח את הפרויקט הקיים והשווה שוב. טעינה מחדש אינה מתקנת חיבור שאינו זמין.</p>
+<h2>דוגמת תוצאה ומשמעות הסכומים</h2>
+<pre>BUDGET_EXCEEDED
+Configured budget exceeded.
+
+FLASH  +51,200 bytes  (720,896 -&gt; 772,096)
+RAM  +27,136 bytes  (176,640 -&gt; 203,776)
+
+BUDGET CHECKS — effective limits for this run
+FLASH allocated sections: 772,096 &lt;= 1,048,576 bytes — OK
+FLASH growth: 51,200 &gt; 16,384 bytes — EXCEEDED
+RAM allocated sections: 203,776 &lt;= 262,144 bytes — OK
+RAM growth: 27,136 &gt; 4,096 bytes — EXCEEDED
+
+Accounting: configured linker profile; allocated output-section bytes.
+Object/symbol attribution: not available.</pre>
+<p>אלה נתוני ההדגמה המצורפת. הדוח מציג כל ערך וסף שנבדק. נתון מאותחל ב־RAM נספר פעם אחת ב־RAM ופעם אחת עבור תמונת הטעינה ב־Flash. שמירת heap/stack אינה מדידת שימוש בזמן ריצה. התאמה מבנית בין Map ל־ELF אינה הוכחת מקור משותף או snapshot אטומי. האימות המודרך נמצא כעת בהרחבה ואינו חוזה CLI עצמאי לאימות Map/ELF.</p>
+<p>לבקשת תמיכה פתח Open User Guide ובחר Support; ייפתח דף תמיכה נפרד. העתק את כתובת התמיכה לתוכנת הדואר שלך. אין העלאת דוחות, טלמטריה או קובצי firmware באופן אוטומטי.</p>
+</body>
+</html>
