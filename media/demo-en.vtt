@@ -1,17 +1,14 @@
 WEBVTT
 
-00:00:00.000 --> 00:00:07.000
-Install the pre-release. Open a trusted folder. Run FW Mem Guard: Run Demo.
+00:00:00.000 --> 00:00:04.000
+Run the bundled demo. Compare Flash and RAM in exact bytes.
 
-00:00:07.000 --> 00:00:16.000
-Flash grows by 51,200 bytes. RAM grows by 27,136 bytes. This is allocated section memory, not runtime peak use.
+00:00:04.000 --> 00:00:10.000
+Total usage passes. Flash and RAM growth exceed their limits.
 
-00:00:16.000 --> 00:00:26.000
-Both total-usage checks pass. Both growth limits fail intentionally. BUDGET_EXCEEDED is expected, not an installation error.
+00:00:10.000 --> 00:00:16.000
+Export opens an unsaved JSON tab. Review it, then choose Save As.
 
-00:00:26.000 --> 00:00:36.000
-The reduced JSON opens in an unsaved editor tab. Review it before Save As. The extension does not upload it.
-
-00:00:36.000 --> 00:00:42.000
-Install FW Mem Guard from Visual Studio Marketplace. Guided project setup supports GNU ld and ARM ELF32 little-endian, one Flash/RAM pair.
+00:00:16.000 --> 00:00:20.000
+Local engine. No telemetry or automatic upload. Try FW Mem Guard in VS Code.
 

@@ -4,7 +4,7 @@
 
 ![Illustrated bundled demo result](media/store-hero.png)
 
-**[Download the 42-second demo video](https://raw.githubusercontent.com/itainover-create/fw-mem-guard/main/media/fw-mem-guard-demo.mp4)**, then open it in your video player. The guides below can be read directly on GitHub without downloading HTML files.
+**[Download the 20-second demo video](https://raw.githubusercontent.com/itainover-create/fw-mem-guard/main/media/fw-mem-guard-demo.mp4)**, then open it in your video player. The guides below can be read directly on GitHub without downloading HTML files.
 
 This repository contains public documentation and illustrated demo media only. The extension implementation is maintained separately.
 
@@ -13,7 +13,7 @@ This repository contains public documentation and illustrated demo media only. T
 - [English quick start](START_HERE_EN.md)
 - [מדריך התחלה בעברית](START_HERE_HE.md)
 - [Support](SUPPORT.md) · [Privacy](PRIVACY.md)
-- [42-second illustrated demo](media/fw-mem-guard-demo.mp4) · [Transcript](media/demo-transcript.html)
+- [20-second illustrated demo](media/fw-mem-guard-demo.mp4) · [Transcript](media/demo-transcript.html)
 - [Demo result](media/demo-result.json) · [Result and media provenance](media/demo-evidence.json)
 
 These guides accompany the 0.3.3 pre-release for Windows x64, Mac Apple Silicon and Mac Intel (macOS 15+). Inside VS Code, run **FW Mem Guard: Open User Guide** for offline help.
