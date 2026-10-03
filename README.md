@@ -2,12 +2,16 @@
 
 **Your build grew. Know by how much.** Compare firmware Flash/RAM and check your chosen budgets locally in VS Code.
 
+![Illustrated bundled demo result](media/store-hero.png)
+
+**[Download the 42-second demo video](https://raw.githubusercontent.com/itainover-create/fw-mem-guard/main/media/fw-mem-guard-demo.mp4)**, then open it in your video player. The guides below can be read directly on GitHub without downloading HTML files.
+
 This repository contains public documentation and illustrated demo media only. The extension implementation is maintained separately.
 
 - [Install the pre-release](https://marketplace.visualstudio.com/items?itemName=fwmemguard.fw-mem-guard)
-- [English quick start](START_HERE_EN.html)
-- [מדריך התחלה בעברית](START_HERE_HE.html)
-- [Support](SUPPORT.html) · [Privacy](PRIVACY.html)
+- [English quick start](START_HERE_EN.md)
+- [מדריך התחלה בעברית](START_HERE_HE.md)
+- [Support](SUPPORT.md) · [Privacy](PRIVACY.md)
 - [42-second illustrated demo](media/fw-mem-guard-demo.mp4) · [Transcript](media/demo-transcript.html)
 - [Demo result](media/demo-result.json) · [Result and media provenance](media/demo-evidence.json)
 
