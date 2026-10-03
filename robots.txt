@@ -1,2 +1,3 @@
 User-agent: *
 Allow: /
+Sitemap: https://itainover-create.github.io/fw-mem-guard/sitemap.xml
