@@ -1,0 +1,49 @@
+{
+  "version": 1,
+  "regions": {
+    "flash": "FLASH",
+    "ram": "RAM"
+  },
+  "sections": {
+    "flash": [
+      ".ARM",
+      ".text"
+    ],
+    "ram_initialized": [
+      ".data",
+      ".isr_vector"
+    ],
+    "ram_zero": [
+      ".bss",
+      ".heap",
+      ".stack"
+    ],
+    "ignore": [
+      ".ARM.attributes",
+      ".comment",
+      ".debug_abbrev",
+      ".debug_aranges",
+      ".debug_frame",
+      ".debug_info",
+      ".debug_line",
+      ".debug_line_str",
+      ".debug_loclists",
+      ".debug_macro",
+      ".debug_rnglists",
+      ".debug_str"
+    ]
+  },
+  "required_sections": [
+    ".ARM"
+  ],
+  "budgets": {
+    "flash": {
+      "max_bytes": 524288,
+      "max_growth_bytes": 8240
+    },
+    "ram": {
+      "max_bytes": 114688,
+      "max_growth_bytes": 4095
+    }
+  }
+}

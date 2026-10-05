@@ -1,0 +1,6 @@
+FW Mem Guard | configured GNU ld profile | local only
+FLASH: 300452 bytes | delta +8240 bytes
+RAM: 26536 bytes | delta +4096 bytes
+  ram growth_bytes: 4096 > 4095
+BUDGET_EXCEEDED
+Object/symbol attribution: not available

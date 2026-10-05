@@ -2,7 +2,7 @@
   "status": "PASS",
   "extension_source_version": "0.3.3",
   "verification_method": "GNU objdump section headers checked against supplied CSV, guided Map/ELF validation and source-engine CLI; firmware not executed or rebuilt",
-  "objdump_version": "GNU objdump (GNU Binutils for Debian) 2.44",
+  "objdump_version": "GNU objdump (GNU Binutils for Ubuntu) 2.42",
   "input_sha256": {
     "baseline/firmware.elf": "2bb4b6f32825b0acd724691361295c8f2c36ce3a94fd5c63f1cd9866269f9509",
     "baseline/firmware.map": "3f349ce68a5aaa6cf78f00360bf48979e0c4a50b80afb97e11b28450ef9cac51",
@@ -76,6 +76,47 @@
         "ram": -4096
       },
       "status": "pass"
+    },
+    "ram_growth_4095": {
+      "engine_exit_code": 2,
+      "baseline": {
+        "flash": 292212,
+        "ram": 22440
+      },
+      "current": {
+        "flash": 300452,
+        "ram": 26536
+      },
+      "delta": {
+        "flash": 8240,
+        "ram": 4096
+      },
+      "status": "budget_exceeded",
+      "violations": [
+        {
+          "actual": 4096,
+          "limit": 4095,
+          "memory": "ram",
+          "metric": "growth_bytes"
+        }
+      ]
+    },
+    "ram_growth_restored_4096": {
+      "engine_exit_code": 0,
+      "baseline": {
+        "flash": 292212,
+        "ram": 22440
+      },
+      "current": {
+        "flash": 300452,
+        "ram": 26536
+      },
+      "delta": {
+        "flash": 8240,
+        "ram": 4096
+      },
+      "status": "pass",
+      "violations": []
     }
   },
   "guided_classes": [

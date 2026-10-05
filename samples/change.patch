@@ -1,0 +1,30 @@
+diff --git a/ports/stm32/main.c b/ports/stm32/main.c
+index df48360..b6fca77 100644
+--- a/ports/stm32/main.c
++++ b/ports/stm32/main.c
+@@ -299,6 +299,17 @@ static bool init_sdcard_fs(void) {
+ }
+ #endif
+ 
++// FW Mem Guard test change: +4096 bytes RAM (.bss), +8192 bytes Flash (.rodata)
++static volatile uint8_t fwmg_test_ram[4096];
++static const uint8_t fwmg_test_table[8192] = { [0] = 1, [4095] = 3, [8191] = 2 };
++static void __attribute__((noinline)) fwmg_test_touch(void) {
++    uint32_t s = 0;
++    for (size_t i = 0; i < sizeof(fwmg_test_table); i += 512) {
++        s += fwmg_test_table[(i + fwmg_test_ram[1]) & (sizeof(fwmg_test_table) - 1)];
++    }
++    fwmg_test_ram[0] = (uint8_t)s;
++}
++
+ void stm32_main(uint32_t reset_mode) {
+     // Low-level MCU initialisation.
+     stm32_system_init();
+@@ -500,6 +511,7 @@ void stm32_main(uint32_t reset_mode) {
+     MICROPY_BOARD_BEFORE_SOFT_RESET_LOOP(&state);
+ 
+ soft_reset:
++    fwmg_test_touch();
+ 
+     MICROPY_BOARD_TOP_SOFT_RESET_LOOP(&state);
+ 

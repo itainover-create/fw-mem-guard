@@ -1,0 +1,1 @@
+FAIL: Section mismatch: expected-only=[('baseline', '.isr_vector', 'FLASH', 'load_image', 134217728, 1057)]; actual-only=[('baseline', '.isr_vector', 'FLASH', 'load_image', 134217728, 1056)]

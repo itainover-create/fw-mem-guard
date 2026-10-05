@@ -1,0 +1,47 @@
+{
+  "attribution": "not_available",
+  "baseline": {
+    "flash": 292212,
+    "ram": 22440
+  },
+  "current": {
+    "flash": 300452,
+    "ram": 26536
+  },
+  "delta": {
+    "flash": 8240,
+    "ram": 4096
+  },
+  "schema_version": 1,
+  "section_delta": {
+    ".ARM": 0,
+    ".ARM.attributes": 0,
+    ".bss": 4096,
+    ".comment": 0,
+    ".data": 0,
+    ".debug_abbrev": 54,
+    ".debug_aranges": 8,
+    ".debug_frame": 24,
+    ".debug_info": 159,
+    ".debug_line": 105,
+    ".debug_line_str": 0,
+    ".debug_loclists": 59,
+    ".debug_macro": 0,
+    ".debug_rnglists": 21,
+    ".debug_str": 46,
+    ".glue_7": 0,
+    ".glue_7t": 0,
+    ".heap": 0,
+    ".igot.plt": 0,
+    ".iplt": 0,
+    ".isr_vector": 0,
+    ".rel.dyn": 0,
+    ".stack": 0,
+    ".text": 8240,
+    ".v4_bx": 0,
+    ".vfp11_veneer": 0
+  },
+  "status": "pass",
+  "validation": "configured_linker_profile",
+  "violations": []
+}

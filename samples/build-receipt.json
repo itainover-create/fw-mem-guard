@@ -1,0 +1,147 @@
+{
+  "status": "PASS",
+  "verified_at_utc": "2026-10-04T18:02:42.971537+00:00",
+  "os": "Ubuntu 24.04.3 LTS",
+  "architecture": "x86_64",
+  "packages": {
+    "gcc-arm-none-eabi": "15:13.2.rel1-2",
+    "binutils-arm-none-eabi": "2.42-1ubuntu1+23",
+    "libnewlib-dev": "4.4.0.20231231-2",
+    "build-essential": "12.10ubuntu1",
+    "git": "1:2.43.0-1ubuntu7.3",
+    "python3": "3.12.3-0ubuntu2.1",
+    "ca-certificates": "20260601~24.04.1"
+  },
+  "tools": {
+    "arm-none-eabi-gcc": "arm-none-eabi-gcc (15:13.2.rel1-2) 13.2.1 20231009",
+    "arm-none-eabi-objdump": "GNU objdump (2.42-1ubuntu1+23) 2.42",
+    "make": "GNU Make 4.3",
+    "git": "git version 2.51.1",
+    "python3": "Python 3.12.14",
+    "gcc": "gcc (Ubuntu 13.3.0-6ubuntu2~24.04) 13.3.0"
+  },
+  "micropython_commit": "ecfdd5d6f9be971852003c2049600dc7b3e2a838",
+  "board": "NUCLEO_F411RE",
+  "build": "build-fwmg",
+  "flags": "-Os -DNDEBUG -g3; DEBUG=1 not used; same build directory for both builds",
+  "claim": "18 allocated section address/size records match; no ELF byte-identity claim",
+  "section_check": {
+    "status": "PASS",
+    "scope": "Exact addresses and sizes of 18 allocated section records; not ELF byte identity",
+    "records_matched": 18,
+    "objdump_version": "GNU objdump (2.42-1ubuntu1+23) 2.42",
+    "reference_sha256": "02f3980b979b82f7a1f3a1d20fa3f53472814fa1af78713fb34041a2103f1b0e",
+    "input_sha256": {
+      "baseline/firmware.elf": "8693d9ea3cbaab6f4510cd957c5f02e19be476f6dcd16968d0a9ccb5eb78f04e",
+      "baseline/firmware.map": "447951ba73fcc8f1701cdd8ed4ef3ff121e55a76765227209ab0f1da9899aa6b",
+      "current/firmware.elf": "895242bce348ecdf1699d3939302bb5884b1406abf1083a2d6deeefbbc84780a",
+      "current/firmware.map": "27a15243f28e5b2141b80cbb2ff36e6b9c05afe7cd9d2ee979dd32e59a85e171"
+    },
+    "totals": {
+      "baseline": {
+        "flash": 292212,
+        "ram": 22440
+      },
+      "current": {
+        "flash": 300452,
+        "ram": 26536
+      }
+    },
+    "delta": {
+      "flash": 8240,
+      "ram": 4096
+    }
+  },
+  "negative_control": {
+    "reference_change_bytes": 1,
+    "exit_code": 1,
+    "rejected": true
+  },
+  "asset_sha256": {
+    "build_from_source.py": "ca627c4107df3329f9d593cf49239d819430e5c08f8ead9bd78478af2a825cb8",
+    "check_sections.py": "bf932068d185879c1f9605c4700a3009075392388fa2eeab742c8e97514c28ef",
+    "change.patch": "5f1a3fc8129d0abd0c8da13642be48e375df1c27c278e6a232b3e581f46529f4",
+    "verified-reference-sections.csv": "02f3980b979b82f7a1f3a1d20fa3f53472814fa1af78713fb34041a2103f1b0e"
+  },
+  "output_sha256": {
+    "rebuilt/baseline/firmware.elf": "8693d9ea3cbaab6f4510cd957c5f02e19be476f6dcd16968d0a9ccb5eb78f04e",
+    "rebuilt/baseline/firmware.map": "447951ba73fcc8f1701cdd8ed4ef3ff121e55a76765227209ab0f1da9899aa6b",
+    "rebuilt/current/firmware.elf": "895242bce348ecdf1699d3939302bb5884b1406abf1083a2d6deeefbbc84780a",
+    "rebuilt/current/firmware.map": "27a15243f28e5b2141b80cbb2ff36e6b9c05afe7cd9d2ee979dd32e59a85e171",
+    "logs/baseline.txt": "893dfda06b215b4a074bc3059edddaed4a5804c9a5dd2e9f2a23ba1aac741034",
+    "logs/clone.txt": "918d091ed5559b6de1f86e9b62c8f9f50ee6420b89a1bacfdffb1e8785b71135",
+    "logs/current.txt": "820851278869b9669ef2221de8a3b46ffbbca5bfd559374832178088a5bd4ab1",
+    "logs/mpy-cross.txt": "d616d6c0023335bab25f2db2d047a300092fc1b569dda253528d102e84118571",
+    "logs/patch-check.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "logs/patch.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "logs/section-check.txt": "a670af39eecb5471637aa12a39ebd832b8b05914cc2c5d17194f7f9eb6c70fb2",
+    "logs/submodules.txt": "b6cb79dbf90fa1de70b13a6d1702554bd472d2cfdf41ead551a361bf78dd61fb",
+    "verification/baseline-objdump.txt": "4fc3fce6cc547cad1a29f5ace8ad1509c047e8947e3fb6584c63f5e5c2dc6212",
+    "verification/current-objdump.txt": "f00a67d136085e5455c9cc6a8bcdd6bc18e42d64ef9d5c7beafcf5adcf8e9039",
+    "verification/negative-control.txt": "79b410f95dc1851290a1aa3e46584afe50116e9cace01eee873c1beab4c47d48",
+    "verification/section-check.json": "a670af39eecb5471637aa12a39ebd832b8b05914cc2c5d17194f7f9eb6c70fb2",
+    "verification/submodules.txt": "affc729773740905ec046c4f94243f9ea2b93998215844a3fa70e5e41745e323"
+  },
+  "commands": [
+    [
+      "git",
+      "clone",
+      "--depth",
+      "1",
+      "--branch",
+      "v1.24.1",
+      "https://github.com/micropython/micropython.git",
+      "/workspace/scratch/af37270ee669/rebuild-verified/micropython"
+    ],
+    [
+      "make",
+      "-C",
+      "/workspace/scratch/af37270ee669/rebuild-verified/micropython/ports/stm32",
+      "BOARD=NUCLEO_F411RE",
+      "BUILD=build-fwmg",
+      "submodules"
+    ],
+    [
+      "make",
+      "-C",
+      "/workspace/scratch/af37270ee669/rebuild-verified/micropython/mpy-cross",
+      "-j2"
+    ],
+    [
+      "make",
+      "-C",
+      "/workspace/scratch/af37270ee669/rebuild-verified/micropython/ports/stm32",
+      "BOARD=NUCLEO_F411RE",
+      "BUILD=build-fwmg",
+      "-j2"
+    ],
+    [
+      "git",
+      "apply",
+      "--check",
+      "/workspace/scratch/af37270ee669/private-repo/public-support/samples/change.patch"
+    ],
+    [
+      "git",
+      "apply",
+      "/workspace/scratch/af37270ee669/private-repo/public-support/samples/change.patch"
+    ],
+    [
+      "make",
+      "-C",
+      "/workspace/scratch/af37270ee669/rebuild-verified/micropython/ports/stm32",
+      "BOARD=NUCLEO_F411RE",
+      "BUILD=build-fwmg",
+      "-j2"
+    ],
+    [
+      "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+      "/workspace/scratch/af37270ee669/private-repo/public-support/samples/check_sections.py",
+      "/workspace/scratch/af37270ee669/rebuild-verified/rebuilt",
+      "--reference",
+      "/workspace/scratch/af37270ee669/private-repo/public-support/samples/verified-reference-sections.csv",
+      "--output",
+      "/workspace/scratch/af37270ee669/rebuild-verified/verification"
+    ]
+  ]
+}

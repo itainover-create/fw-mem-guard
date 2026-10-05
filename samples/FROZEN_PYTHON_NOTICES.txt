@@ -1,0 +1,43 @@
+Frozen Python modules in the default NUCLEO_F411RE manifest
+MicroPython ecfdd5d6f9be971852003c2049600dc7b3e2a838
+micropython-lib 68e3e07bc7ab63931cead3854b2a114e9a084248
+
+Source: ports/stm32/boards/manifest.py includes extmod/asyncio and requires dht and onewire.
+MIT license texts are retained in MICROPYTHON_LICENSE.txt and MICROPYTHON_LIB_LICENSE.txt.
+
+extmod/asyncio/__init__.py
+# MicroPython asyncio module
+# MIT license; Copyright (c) 2019 Damien P. George
+
+extmod/asyncio/core.py
+# MicroPython asyncio module
+# MIT license; Copyright (c) 2019 Damien P. George
+
+extmod/asyncio/event.py
+# MicroPython asyncio module
+# MIT license; Copyright (c) 2019-2020 Damien P. George
+
+extmod/asyncio/funcs.py
+# MicroPython asyncio module
+# MIT license; Copyright (c) 2019-2022 Damien P. George
+
+extmod/asyncio/lock.py
+# MicroPython asyncio module
+# MIT license; Copyright (c) 2019-2020 Damien P. George
+
+extmod/asyncio/stream.py
+# MicroPython asyncio module
+# MIT license; Copyright (c) 2019-2020 Damien P. George
+
+extmod/asyncio/uasyncio.py
+# This module just allows `import uasyncio` to work. It lazy-loads from
+# `asyncio` without duplicating its globals dict.
+
+lib/micropython-lib/micropython/drivers/sensor/dht/dht.py
+# DHT11/DHT22 driver for MicroPython on ESP8266
+# MIT license; Copyright (c) 2016 Damien P. George
+
+lib/micropython-lib/micropython/drivers/bus/onewire/onewire.py
+# 1-Wire driver for MicroPython
+# MIT license; Copyright (c) 2016 Damien P. George
+
