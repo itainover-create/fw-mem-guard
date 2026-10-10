@@ -1,20 +1,20 @@
 WEBVTT
 
-00:00:00.000 --> 00:00:06.000
+00:00:00.000 --> 00:00:03.000
 Compare two verified MicroPython builds. Flash +8,240 bytes. RAM +4,096 bytes.
 
-00:00:06.000 --> 00:00:16.000
+00:00:03.000 --> 00:00:08.000
 Start with PASS: Flash growth 8,240; RAM growth 4,096. Total usage also passes.
 
-00:00:16.000 --> 00:00:28.000
+00:00:08.000 --> 00:00:14.000
 Edit only RAM growth: 4,096 to 4,095. Actual 4,096 exceeds the limit by one byte. Engine exit 2.
 
-00:00:28.000 --> 00:00:38.000
+00:00:14.000 --> 00:00:19.000
 Restore RAM growth to 4,096. The same firmware comparison returns PASS.
 
-00:00:38.000 --> 00:00:50.000
+00:00:19.000 --> 00:00:25.000
 Candidate 0.3.4 adds Linux CI, multiple memory banks and conservative object/archive attribution.
 
-00:00:50.000 --> 00:00:58.000
+00:00:25.000 --> 00:00:29.000
 Install the candidate for your platform. Engine runs locally. No telemetry or automatic upload.
 
