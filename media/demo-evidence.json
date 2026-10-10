@@ -65,15 +65,15 @@
     }
   ],
   "not_a_vscode_screen_recording": true,
-  "duration_seconds": 58,
-  "fps": 12,
+  "duration_seconds": 29,
+  "fps": 24,
   "scene_durations": [
+    3,
+    5,
     6,
-    10,
-    12,
-    10,
-    12,
-    8
+    5,
+    6,
+    4
   ],
   "compiled_engine_sha256": "327c344844ea94ee6b63d84094493ab61cbdc034cec369aa11cf871104d97bb6",
   "source_sha256": "d0a9f54b9471ce02ce7a6f56ea58a45ae760e6ba3f6da36fb628f392845aa273",
@@ -85,10 +85,10 @@
     "current/firmware.map": "280f30e4eebaf0bf4f004bb18e443b66a76b3d012f6654ead0943294c4d1c17b"
   },
   "media_sha256": {
-    "fw-mem-guard-demo.mp4": "d3264d1d68d2385487a1cac046946ab503c649b0a05fa16ea7c940afba2de125",
-    "demo-preview.gif": "fc45e595f17620fd986fb460e393c5b25edb5a3210e97c206f05b6582b2c1956",
+    "fw-mem-guard-demo.mp4": "f09349406e7f23ecdb23f7f392ab2480d1f10be0320096bb2e71944ac6bde449",
+    "demo-preview.gif": "31294d011261ddc6fe29c19582eb14f6aa20877dcf35311607f92a23d8bbf9a2",
     "demo-poster.png": "ae3c2fdd83d59edad46f3ef93c2d87d6a758249b1f8fe8cade544da9e98aa3fd",
     "store-hero.png": "015ba4409ddba4592cc0a896d2ffde683f459649bbcb88490f423446f3f5e6fe",
-    "demo-en.vtt": "41ab74811ee0f0eac822d3bf33884ee0afe794ef2c80b49e8a279ba32c8793b1"
+    "demo-en.vtt": "6a7c5f0b4a80a882a027ca554b3d14e2105a258a10432dee7ed5ed596d13005a"
   }
 }
