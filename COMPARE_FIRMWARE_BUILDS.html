@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Compare Flash and RAM between GNU Arm firmware builds | FW Mem Guard</title>
+<meta name="description" content="Keep a fixed baseline, select matching GNU ld MAP and ARM ELF pairs, and compare firmware Flash and RAM growth in VS Code.">
+<link rel="canonical" href="https://itainover-create.github.io/fw-mem-guard/COMPARE_FIRMWARE_BUILDS.html"><link rel="stylesheet" href="site.css"></head>
+<body><a class="skip" href="#content">Skip to content</a><header><div class="wrap nav"><a class="brand" href="index.html">FW Mem Guard</a><a href="TRY_IT.html">Try the free pre-release</a></div></header>
+<main class="doc-shell" id="content"><h1>Compare Flash and RAM between firmware builds</h1>
+<p>A successful link tells you that a build fits its linker layout. Comparing it with a fixed baseline tells you how much it grew. FW Mem Guard checks the total and growth budgets you choose.</p>
+<h2>1. Check the host and input formats</h2>
+<p>The published 0.3.3 pre-release runs in VS Code on Windows x64 and macOS Apple Silicon or Intel (declared macOS 15+). Guided WSL inputs run through the Windows host. Native Linux and build-server execution are not currently supported.</p>
+<p>Each build needs a complete GNU ld MAP and its matching ARM ELF32 little-endian linked executable. Both builds must use the supported, unchanged memory layout: one region covering active Flash loads and one covering active RAM. A board, compiler brand or firmware operating system alone does not establish compatibility. Review the <a href="TRY_IT.html#compatibility">full compatibility boundary</a> before trying another configuration.</p>
+<h2>2. Preserve two completed builds</h2>
+<p>Finish the baseline build, then copy its MAP and ELF to a separate baseline directory. Finish your changed build and keep its matching pair at current-build paths. Do not overwrite the baseline when rebuilding. Record the source revision, board, toolchain and build flags so you can explain the difference later.</p>
+<p>Select pairs from completed builds. Structural agreement between MAP and ELF is useful validation, but does not prove that the files came from the same build or provide an atomic snapshot during a rebuild.</p>
+<h2>3. Set up the saved project</h2>
+<ol><li>Open a folder you control and trust. In the Command Palette, run <code>FW Mem Guard: Set Up / Update Project</code>.</li>
+<li>Select baseline MAP + ELF, then current MAP + ELF.</li><li>Confirm regions that cover the required Flash load and RAM run addresses in both builds. A region alias is not automatically an additional active memory bank.</li>
+<li>Enter all four limits: Flash total, Flash growth, RAM total and RAM growth. Choose limits that reflect your project requirements.</li><li>Select <strong>Validate and Save</strong> and save a new <code>.fwmg.json</code> project. Review the comparison in Output.</li></ol>
+<h2>4. Interpret and repeat</h2>
+<p><strong>PASS</strong> means all four configured checks passed. <strong>BUDGET_EXCEEDED</strong> is a valid comparison with one or more exceeded limits. <strong>ERROR</strong> means there is no valid result for that operation.</p>
+<p>After another completed rebuild, run <code>Compare Builds</code> or <code>Repeat Last Comparison</code>. Current input bytes are read again. Keep the baseline fixed unless you deliberately update it. Use <code>Open Project</code> after reopening VS Code.</p>
+<h2>Start with a reproducible reference</h2>
+<p>The <a href="REAL_FIRMWARE.html">MicroPython F411 example</a> grows Flash by 8,240 bytes and RAM by 4,096 bytes. Its download includes original firmware, rebuild instructions, licenses, section references and raw verification evidence. Rebuilding checks allocated section addresses and sizes; it does not claim byte-identical ELF output.</p>
+<p>Next: <a href="FIRMWARE_MEMORY_BUDGETS.html">Choose and test memory budgets</a> · <a href="TRY_IT.html">First comparison</a> · <a href="SUPPORT.html">Troubleshooting</a>.</p>
+<p class="fine">This guide describes published 0.3.3 behavior. It does not require the unreleased results panel. No automatic upload or telemetry.</p></main></body></html>
