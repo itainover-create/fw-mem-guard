@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Set Flash and RAM growth budgets in VS Code | FW Mem Guard</title>
+<meta name="description" content="Understand total versus growth budgets, initialized RAM accounting and a reproducible one-byte RAM budget failure with MicroPython.">
+<link rel="canonical" href="https://itainover-create.github.io/fw-mem-guard/FIRMWARE_MEMORY_BUDGETS.html"><link rel="stylesheet" href="site.css"></head>
+<body><a class="skip" href="#content">Skip to content</a><header><div class="wrap nav"><a class="brand" href="index.html">FW Mem Guard</a><a href="TRY_IT.html">Try the free pre-release</a></div></header>
+<main class="doc-shell" id="content"><h1>Set Flash and RAM budgets that catch growth</h1>
+<p>A firmware image can fit the linker layout while growing more than your team intended. A total budget limits the current build. A growth budget limits its increase from the baseline. FW Mem Guard evaluates both for Flash and RAM.</p>
+<h2>Keep three numbers separate</h2>
+<ul><li><strong>Linker region capacity:</strong> the size declared in the selected memory region.</li><li><strong>Total budget:</strong> your permitted current usage, which may intentionally leave headroom.</li><li><strong>Growth budget:</strong> your permitted increase over the baseline. Zero means no positive growth; it does not disable the check.</li></ul>
+<p>Allocated section bytes are measured. This is not a measurement of peak runtime heap or stack use. Initialized data occupies RAM while running and also needs its load image in Flash; counting those bytes in both totals is intentional. Reserved address span and allocated byte totals are different quantities.</p>
+<h2>Reproduce a one-byte boundary failure</h2>
+<p>Download and set up the <a href="REAL_FIRMWARE.html">verified MicroPython v1.24.1 example</a>. Keep all four original MAP/ELF files unchanged. Select FLASH (not FLASH_TEXT) and RAM.</p>
+<div class="evidence-table" tabindex="0" role="region" aria-label="Example memory budgets, scroll horizontally"><table><caption>Example limits in bytes; these are not universal project defaults.</caption><thead><tr><th>Check</th><th>Limit</th><th>Actual</th></tr></thead><tbody><tr><td>Flash total</td><td>524288</td><td>300452</td></tr><tr><td>Flash growth</td><td>8240</td><td>8240</td></tr><tr><td>RAM total</td><td>114688</td><td>26536</td></tr><tr><td>RAM growth</td><td>4096</td><td>4096</td></tr></tbody></table></div>
+<ol><li>Validate and save the project with these limits. Expect <strong>PASS</strong>.</li><li>Run <code>FW Mem Guard: Edit Budgets</code>. Lower only RAM growth from <strong>4096</strong> to <strong>4095</strong>. Leave the other three budgets unchanged.</li><li>Choose <strong>Validate and Save</strong>. It automatically compares the builds. Expect one RAM-growth violation: <code>actual=4096</code>, <code>limit=4095</code>, engine exit code <strong>2</strong>.</li><li>Restore RAM growth to <strong>4096</strong> and validate/save again. Expect <strong>PASS</strong>.</li></ol>
+<p>This changes a budget by one byte, not the firmware. Equality with a limit passes; exceeding it fails. Inspect the <a href="samples/ram-growth-4095.txt">raw failing engine output</a> and <a href="samples/ram-growth-restored-4096.json">restored result</a>.</p>
+<h2>Review a failure before changing its limit</h2>
+<p>Confirm the intended baseline, completed current build and effective limits. If the growth was expected, review the tradeoff before approving a new budget. If it was unexpected, use the build's MAP/ELF and toolchain to investigate. The published version does not attribute changes to objects or libraries.</p>
+<p><code>Export Report for Sharing</code> opens reduced JSON in an unsaved editor tab. Review it before saving or sharing. It omits paths, section names and symbols, but totals and budgets may still be sensitive.</p>
+<p>Next: <a href="COMPARE_FIRMWARE_BUILDS.html">Compare your own builds</a> · <a href="TRY_IT.html">Full trial route and compatibility</a> · <a href="SUPPORT.html">Troubleshooting</a>.</p>
+<p class="fine">Published workflow: 0.3.3 pre-release. Linux CLI/CI integration remains planned, not available. No automatic upload or telemetry.</p></main></body></html>

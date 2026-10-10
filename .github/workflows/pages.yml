@@ -26,7 +26,7 @@ jobs:
       - name: Stage public documentation only
         run: |
           mkdir site
-          cp index.html TRY_IT.html REAL_FIRMWARE.html START_HERE_EN.html START_HERE_HE.html SUPPORT.html PRIVACY.html site.css robots.txt site/
+          cp index.html COMPARE_FIRMWARE_BUILDS.html FIRMWARE_MEMORY_BUDGETS.html TRY_IT.html REAL_FIRMWARE.html START_HERE_EN.html START_HERE_HE.html SUPPORT.html PRIVACY.html site.css robots.txt site/
           if [ -f sitemap.xml ]; then cp sitemap.xml site/; fi
           mkdir site/samples
           for asset in BUILD_FROM_SOURCE.md FROZEN_PYTHON_NOTICES.txt MICROPYTHON_LIB_LICENSE.txt baseline-objdump.txt build-receipt.json build_from_source.py change.patch check_sections.py checker-negative-control.txt current-objdump.txt micropython-f411-v1.24.1.zip micropython-f411-v1.24.1.zip.sha256 ram-growth-4095-profile.json ram-growth-4095.json ram-growth-4095.txt ram-growth-restored-4096.json rebuild-submodules.txt rebuilt-baseline-objdump.txt rebuilt-current-objdump.txt verification.json verified-reference-sections.csv; do
