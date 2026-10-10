@@ -1,14 +1,20 @@
 WEBVTT
 
-00:00:00.000 --> 00:00:04.000
-Run the bundled demo. Compare Flash and RAM in exact bytes.
+00:00:00.000 --> 00:00:06.000
+Compare two verified MicroPython builds. Flash +8,240 bytes. RAM +4,096 bytes.
 
-00:00:04.000 --> 00:00:10.000
-Total usage passes. Flash and RAM growth exceed their limits.
+00:00:06.000 --> 00:00:16.000
+Start with PASS: Flash growth 8,240; RAM growth 4,096. Total usage also passes.
 
-00:00:10.000 --> 00:00:16.000
-Export opens an unsaved JSON tab. Review it, then choose Save As.
+00:00:16.000 --> 00:00:28.000
+Edit only RAM growth: 4,096 to 4,095. Actual 4,096 exceeds the limit by one byte. Engine exit 2.
 
-00:00:16.000 --> 00:00:20.000
-Local engine. No telemetry or automatic upload. Try FW Mem Guard in VS Code.
+00:00:28.000 --> 00:00:38.000
+Restore RAM growth to 4,096. The same firmware comparison returns PASS.
+
+00:00:38.000 --> 00:00:50.000
+Candidate 0.3.4 adds Linux CI, multiple memory banks and conservative object/archive attribution.
+
+00:00:50.000 --> 00:00:58.000
+Install the candidate for your platform. Engine runs locally. No telemetry or automatic upload.
 

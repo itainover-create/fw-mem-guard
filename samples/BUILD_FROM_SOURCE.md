@@ -93,7 +93,7 @@ files can differ from the original firmware hashes; that is expected.
 
 ## Demonstrate the RAM budget failure
 
-Follow `TRY_GUIDED_SETUP_EN.md` or `TRY_GUIDED_SETUP_HE.md`. After the initial PASS,
+Follow `TRY_GUIDED_SETUP_EN.md`. After the initial PASS,
 run **FW Mem Guard: Edit Budgets**, lower **only RAM growth from 4096 to 4095**,
 and leave Flash total **524288**, Flash growth **8240** and RAM total **114688**.
 **Validate and Save automatically runs the comparison.** Expect exactly one

@@ -11,7 +11,7 @@ This repository contains public documentation and illustrated demo media only. T
 - [Open the public website and watch the demo](https://itainover-create.github.io/fw-mem-guard/)
 - [Install the pre-release](https://marketplace.visualstudio.com/items?itemName=fwmemguard.fw-mem-guard)
 - [English quick start](START_HERE_EN.md)
-- [מדריך התחלה בעברית](START_HERE_HE.md)
+
 - [Support](SUPPORT.md) · [Privacy](PRIVACY.md)
 - [20-second illustrated demo](media/fw-mem-guard-demo.mp4) · [Transcript](media/demo-transcript.html)
 - [Demo result](media/demo-result.json) · [Result and media provenance](media/demo-evidence.json)

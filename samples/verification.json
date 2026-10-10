@@ -10,7 +10,6 @@
     "current/firmware.map": "280f30e4eebaf0bf4f004bb18e443b66a76b3d012f6654ead0943294c4d1c17b",
     "change.patch": "5f1a3fc8129d0abd0c8da13642be48e375df1c27c278e6a232b3e581f46529f4",
     "expected_reference_sections.csv": "1cb4798580842f7b62fe834cc57215a3b3cd1dda4393b6cfdea5681dbdaf3ef6",
-    "README_HE.md": "c0fd680fc7877a67a3a86644c9a98d2c2f551a7c9af2ff437a6b5edf7c8f3b41",
     "LICENSE_MicroPython.txt": "74111c31aa66f05e5dbd3f9f303653dfda1aa85b8525941afb115e62e3f3d18a"
   },
   "source_sha256": {
@@ -201,5 +200,10 @@
     "rejected": true,
     "reason": "Region coverage: .isr_vector LMA/load (Flash) [0x8000000, 0x8000420) (1056 bytes) is not covered by the selected regions. Flash: FLASH_TEXT [0x8020000, 0x8080000) \u2014 393,216 bytes; RAM: RAM [0x20000000, 0x2001c000) \u2014 114,688 bytes. Run Set Up / Update Project and choose regions covering all required VMA/run and LMA/load ranges. A wrong subregion selection does not establish multiple active banks."
   },
-  "native_gui_acceptance": "NOT_TESTED"
+  "native_gui_acceptance": "NOT_TESTED",
+  "documentation_repack": {
+    "date": "2026-10-10",
+    "language": "English only",
+    "original_firmware_unchanged": true
+  }
 }

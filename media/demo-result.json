@@ -1,57 +1,68 @@
 {
-  "format": "fwmemguard.shareable-report",
-  "format_version": 1,
-  "extension_version": "0.3.3",
-  "engine_version": "0.1.0-pilot.1",
-  "generated_at": "2026-10-03T00:00:00.000Z",
-  "context": "demo",
-  "operation": "compare",
-  "status": "budget_exceeded",
-  "input_validation": "configured_linker_profile",
-  "accounting": "allocated_output_section_bytes",
-  "attribution": "not_available",
-  "units": "bytes",
-  "current": {
-    "flash": 772096,
-    "ram": 203776
-  },
-  "baseline": {
-    "flash": 720896,
-    "ram": 176640
-  },
-  "delta": {
-    "flash": 51200,
-    "ram": 27136
-  },
-  "budgets_checked": true,
-  "budget_checks": [
+  "extension_version": "0.3.4",
+  "kind": "illustrated_compiled_engine_results",
+  "cases": [
     {
-      "memory": "flash",
-      "metric": "usage_bytes",
-      "actual": 772096,
-      "limit": 1048576,
-      "exceeded": false
+      "ram_growth_limit": 4096,
+      "engine_exit": 0,
+      "status": "pass",
+      "baseline": {
+        "flash": 292212,
+        "ram": 22440
+      },
+      "current": {
+        "flash": 300452,
+        "ram": 26536
+      },
+      "delta": {
+        "flash": 8240,
+        "ram": 4096
+      },
+      "violations": []
     },
     {
-      "memory": "flash",
-      "metric": "growth_bytes",
-      "actual": 51200,
-      "limit": 16384,
-      "exceeded": true
+      "ram_growth_limit": 4095,
+      "engine_exit": 2,
+      "status": "budget_exceeded",
+      "baseline": {
+        "flash": 292212,
+        "ram": 22440
+      },
+      "current": {
+        "flash": 300452,
+        "ram": 26536
+      },
+      "delta": {
+        "flash": 8240,
+        "ram": 4096
+      },
+      "violations": [
+        {
+          "actual": 4096,
+          "limit": 4095,
+          "memory": "ram",
+          "metric": "growth_bytes"
+        }
+      ]
     },
     {
-      "memory": "ram",
-      "metric": "usage_bytes",
-      "actual": 203776,
-      "limit": 262144,
-      "exceeded": false
-    },
-    {
-      "memory": "ram",
-      "metric": "growth_bytes",
-      "actual": 27136,
-      "limit": 4096,
-      "exceeded": true
+      "ram_growth_limit": 4096,
+      "engine_exit": 0,
+      "status": "pass",
+      "baseline": {
+        "flash": 292212,
+        "ram": 22440
+      },
+      "current": {
+        "flash": 300452,
+        "ram": 26536
+      },
+      "delta": {
+        "flash": 8240,
+        "ram": 4096
+      },
+      "violations": []
     }
-  ]
+  ],
+  "not_a_vscode_screen_recording": true
 }

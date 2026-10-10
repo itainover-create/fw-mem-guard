@@ -1,10 +1,10 @@
 FW Mem Guard 0.3.3 — Quick Start
 
-[FW Mem Guard](index.html) · [English](START_HERE_EN.html) · <a href="START_HERE_HE.html" lang="he">עברית</a> · [Support](SUPPORT.html)
+[FW Mem Guard](index.html) · [English](START_HERE_EN.html) · [Support](SUPPORT.html)
 
 # FW Mem Guard 0.3.3 — Quick Start
 
-**Help inside VS Code:** Open the Command Palette → `FW Mem Guard: Open User Guide`, then choose English, Hebrew or Support. No browser or internet connection is needed.
+**Help inside VS Code:** Open the Command Palette → `FW Mem Guard: Open User Guide`, then choose English or Support. No browser or internet connection is needed.
 
 **Publisher: FW Mem Guard — `fwmemguard`.** Extension ID: `fwmemguard.fw-mem-guard`. Disable the old `fw-mem-guard-pilot.fw-mem-guard` extension if installed, then use Open Project to reopen your existing project file. Previous workspace selections may not carry over. Project files remain unchanged.
 

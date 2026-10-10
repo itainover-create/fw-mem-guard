@@ -1,73 +1,94 @@
 {
-  "kind": "animated_illustrated_bundled_demo",
-  "not_a_vscode_screen_recording": true,
-  "engine_version": "0.1.0-pilot.1",
-  "extension_version": "0.3.3",
-  "engine_exit": 2,
-  "duration_seconds": 20.0,
-  "scene_durations": [
-    4,
-    6,
-    6,
-    4
-  ],
-  "fps": 24,
-  "baseline": {
-    "flash": 720896,
-    "ram": 176640
-  },
-  "current": {
-    "flash": 772096,
-    "ram": 203776
-  },
-  "delta": {
-    "flash": 51200,
-    "ram": 27136
-  },
-  "budget_checks": [
+  "extension_version": "0.3.4",
+  "kind": "illustrated_compiled_engine_results",
+  "cases": [
     {
-      "memory": "flash",
-      "metric": "usage_bytes",
-      "actual": 772096,
-      "limit": 1048576,
-      "exceeded": false
+      "ram_growth_limit": 4096,
+      "engine_exit": 0,
+      "status": "pass",
+      "baseline": {
+        "flash": 292212,
+        "ram": 22440
+      },
+      "current": {
+        "flash": 300452,
+        "ram": 26536
+      },
+      "delta": {
+        "flash": 8240,
+        "ram": 4096
+      },
+      "violations": []
     },
     {
-      "memory": "flash",
-      "metric": "growth_bytes",
-      "actual": 51200,
-      "limit": 16384,
-      "exceeded": true
+      "ram_growth_limit": 4095,
+      "engine_exit": 2,
+      "status": "budget_exceeded",
+      "baseline": {
+        "flash": 292212,
+        "ram": 22440
+      },
+      "current": {
+        "flash": 300452,
+        "ram": 26536
+      },
+      "delta": {
+        "flash": 8240,
+        "ram": 4096
+      },
+      "violations": [
+        {
+          "actual": 4096,
+          "limit": 4095,
+          "memory": "ram",
+          "metric": "growth_bytes"
+        }
+      ]
     },
     {
-      "memory": "ram",
-      "metric": "usage_bytes",
-      "actual": 203776,
-      "limit": 262144,
-      "exceeded": false
-    },
-    {
-      "memory": "ram",
-      "metric": "growth_bytes",
-      "actual": 27136,
-      "limit": 4096,
-      "exceeded": true
+      "ram_growth_limit": 4096,
+      "engine_exit": 0,
+      "status": "pass",
+      "baseline": {
+        "flash": 292212,
+        "ram": 22440
+      },
+      "current": {
+        "flash": 300452,
+        "ram": 26536
+      },
+      "delta": {
+        "flash": 8240,
+        "ram": 4096
+      },
+      "violations": []
     }
   ],
-  "inputs": {
-    "engine/fw_memguard.py": "1fea8a1f08fe791841d51675212bd8dbcb82686505317bb160b45aba8fe38b68",
-    "examples/old.map": "713b55998591baa802ae95dd1e507eb69cf14fbe949cf927fc11d69ee5e2de07",
-    "examples/new.map": "2287421aec62e21f3760ee6e91b81f987c78dca5978f7830410d4d59e1fdf412",
-    "examples/demo-profile.json": "9188b2ffaa73f2c075253949076e93684ed0c68d59b57304c0dbf9017d74f553",
-    "src/report.js": "e251f4092f11ec09eb745f505a65f4afb1d41f34252acccc714daa04aee20734",
-    "src/shareable-report.js": "78a0e7a1171cee41d0a5d50e05fa35998a2692e34335cc3c09f10e6ff8779b39",
-    "scripts/demo-presentation.html": "f2e23d27d3dd2fcef76d77ce478ea615b0708ad0c3b6f2c4fdddbf94e2daabc0"
+  "not_a_vscode_screen_recording": true,
+  "duration_seconds": 58,
+  "fps": 12,
+  "scene_durations": [
+    6,
+    10,
+    12,
+    10,
+    12,
+    8
+  ],
+  "compiled_engine_sha256": "327c344844ea94ee6b63d84094493ab61cbdc034cec369aa11cf871104d97bb6",
+  "source_sha256": "d0a9f54b9471ce02ce7a6f56ea58a45ae760e6ba3f6da36fb628f392845aa273",
+  "native_build_run_id": 38066058219,
+  "fixture_sha256": {
+    "baseline/firmware.elf": "2bb4b6f32825b0acd724691361295c8f2c36ce3a94fd5c63f1cd9866269f9509",
+    "baseline/firmware.map": "3f349ce68a5aaa6cf78f00360bf48979e0c4a50b80afb97e11b28450ef9cac51",
+    "current/firmware.elf": "21cac4c2a7973d44c5bd93f6d3987c0a33532115543e029a89ebb588f43557b3",
+    "current/firmware.map": "280f30e4eebaf0bf4f004bb18e443b66a76b3d012f6654ead0943294c4d1c17b"
   },
   "media_sha256": {
-    "demo-poster.png": "daf07c48e429e7a25d03be2d5f8cbf40592c934ce40099b2c6e90697a04c3944",
-    "fw-mem-guard-demo.mp4": "a76694d71118691fcfeedce274e84f32907274627efc7595375a9b5e736bff54",
-    "demo-preview.gif": "38f82c94a96294384f6014a829c7bb3838b946674e41ea0d7679157738ecadf7",
-    "store-hero.png": "a631962be98ec4295b494f495811e3aafac1b182dd9dd12dc19b6308db66d116",
-    "icon.png": "03830ae2eb64c44e44b130c7caa84f1d2c9cf6238c05f5fb6b17a89e2a46ede5"
+    "fw-mem-guard-demo.mp4": "d3264d1d68d2385487a1cac046946ab503c649b0a05fa16ea7c940afba2de125",
+    "demo-preview.gif": "fc45e595f17620fd986fb460e393c5b25edb5a3210e97c206f05b6582b2c1956",
+    "demo-poster.png": "ae3c2fdd83d59edad46f3ef93c2d87d6a758249b1f8fe8cade544da9e98aa3fd",
+    "store-hero.png": "015ba4409ddba4592cc0a896d2ffde683f459649bbcb88490f423446f3f5e6fe",
+    "demo-en.vtt": "41ab74811ee0f0eac822d3bf33884ee0afe794ef2c80b49e8a279ba32c8793b1"
   }
 }

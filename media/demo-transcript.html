@@ -1,14 +1,12 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>FW Mem Guard — Demo transcript</title><link rel="stylesheet" href="../site.css"></head><body><main class="doc-shell"><a href="../index.html#demo">Back to the demo</a><h1>20-second demo transcript</h1><p>Animated illustration using actual bundled demo results. Not a recording of VS Code. The demo is a manual-profile comparison; guided Map/ELF setup is a separate workflow.</p><h2>00:00:00 — See what changed</h2><p>Run the bundled demo. Compare Flash and RAM in exact bytes.</p><h2>00:00:04 — Check your limits</h2><p>Total usage passes. Flash and RAM growth exceed their limits.</p><h2>00:00:10 — Share on your terms</h2><p>Export opens an unsaved JSON tab. Review it, then choose Save As.</p><h2>00:00:16 — Try the demo</h2><p>Local engine. No telemetry or automatic upload. Try FW Mem Guard in VS Code.</p><h2>Exact output</h2><pre>BUDGET_EXCEEDED
-Configured budget exceeded.
-
-FLASH  +51,200 bytes  (720,896 -&gt; 772,096)
-RAM  +27,136 bytes  (176,640 -&gt; 203,776)
-
-BUDGET CHECKS — effective limits for this run
-FLASH allocated sections: 772,096 &lt;= 1,048,576 bytes — OK
-FLASH growth: 51,200 &gt; 16,384 bytes — EXCEEDED
-RAM allocated sections: 203,776 &lt;= 262,144 bytes — OK
-RAM growth: 27,136 &gt; 4,096 bytes — EXCEEDED
-
-Accounting: configured linker profile; allocated output-section bytes.
-Object/symbol attribution: not available.</pre><p><a href="demo-result.json">Reduced demo report</a>. Its capture time is fixed for reproducible presentation, not a live run timestamp.</p></main></body></html>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>FW Mem Guard — Candidate demo transcript</title><link rel="stylesheet" href="../site.css"></head><body><main class="doc-shell"><a href="../index.html#demo">Back to the demo</a><h1>58-second candidate demonstration</h1><p>English illustrated results from the actual compiled 0.3.4 candidate engine. This is not a VS Code screen recording or evidence of installed GUI acceptance. Store downloads remain on 0.3.3 until acceptance.</p>
+<h2>00:00–00:06 — Real firmware</h2><p>Verified MicroPython v1.24.1 NUCLEO_F411RE builds: Flash 292,212 → 300,452 bytes; RAM 22,440 → 26,536 bytes. Growth: 8,240 and 4,096 bytes.</p>
+<h2>00:06–00:16 — Start with PASS</h2><p>Flash growth limit 8,240; RAM growth limit 4,096. Total limits remain Flash 524,288 and RAM 114,688. All four checks pass. Engine exit 0.</p>
+<h2>00:16–00:28 — One byte over budget</h2><p>In the guided example, run FW Mem Guard: Edit Budgets. Change only RAM growth from 4,096 to 4,095. Validate and Save automatically compares. This illustration uses the same limits run directly through the compiled engine: only RAM growth fails, actual 4,096, limit 4,095. Engine exit 2.</p>
+<h2>00:28–00:38 — Restore PASS</h2><p>Restore RAM growth to 4,096. Keep the firmware and other three budgets unchanged. PASS returns, engine exit 0.</p>
+<h2>00:38–00:50 — Candidate team features</h2><p>Linux x64 CLI for CI with the same project file; aggregate and per-bank Flash/RAM budgets; conservative attribution to GNU compiled objects and archives, retaining uncertain bytes as residual. The results panel includes growing sections. This illustration does not demonstrate their installed GUI operation.</p>
+<h2>00:50–00:58 — Choose your platform</h2><p>Candidate VSIX: Windows x64, Mac Apple Silicon and Mac Intel. Linux x64 is a separate CLI archive. Local engine, no telemetry or automatic upload. English guides and verified example included.</p>
+<h2>Engine evidence</h2><pre>RAM growth limit 4096: PASS, exit 0
+RAM growth limit 4095: BUDGET_EXCEEDED, exit 2
+  RAM growth: actual 4096, limit 4095
+  Other three budget checks: PASS
+RAM growth limit 4096 restored: PASS, exit 0</pre><p><a href="demo-result.json">Three compiled-engine results</a> · <a href="demo-output.txt">Text results</a> · <a href="demo-evidence.json">Binary, firmware and media SHA256 evidence</a> · <a href="../REAL_FIRMWARE.html">Verified sample and source build</a></p></main></body></html>
