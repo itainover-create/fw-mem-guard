@@ -1,4 +1,4 @@
-[FW Mem Guard](index.html) · [English guide](START_HERE_EN.html) · <a href="START_HERE_HE.html" lang="he">עברית</a> · [Privacy](PRIVACY.html)
+[FW Mem Guard](index.html) · [English guide](START_HERE_EN.html) · [Privacy](PRIVACY.html)
 
 # FW Mem Guard Support
 
