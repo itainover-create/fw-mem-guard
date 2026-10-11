@@ -1,6 +1,6 @@
 # FW Mem Guard — public documentation
 
-**VS Code extension:** Windows x64; macOS 15+ on Apple Silicon or Intel. **Linux x64:** CLI / CI only (Ubuntu 24.04); no Linux VSIX.
+**VS Code extension:** Windows x64; macOS 15+ on Apple Silicon or Intel. **Linux x64:** separate CLI / CI package targeting glibc 2.28+, tested on Rocky Linux 8 and Ubuntu 24.04 with Node.js 22 and 24; no Linux VSIX. Public CLI download publication is pending.
 
 **Your build grew. Know by how much.** Compare firmware Flash/RAM and check your chosen budgets locally in VS Code.
 
@@ -18,7 +18,7 @@ This repository contains public documentation and illustrated demo media only. T
 - [29-second illustrated demo](media/fw-mem-guard-demo.mp4) · [Transcript](media/demo-transcript.html)
 - [Demo result](media/demo-result.json) · [Result and media provenance](media/demo-evidence.json)
 
-These guides accompany the published 0.3.4 pre-release for Windows x64, Mac Apple Silicon and Mac Intel (native CLI/package checks on macOS 15.7.9; earlier versions unverified). Inside VS Code, run **FW Mem Guard: Open User Guide** for offline help.
+The owner reports 0.3.6 published in VS Code Marketplace for Windows x64, Mac Apple Silicon and Mac Intel. Native build/package checks passed; this is separate from installed GUI acceptance. Inside VS Code, run **FW Mem Guard: Open User Guide** for version-matched offline help.
 
 The video illustrates actual results from the bundled engine and reduced-report exporter; it is not a VS Code screen recording or an installation acceptance test. Its capture timestamp is fixed for repeatable presentation. All firmware data in it is the bundled example, not customer firmware.
 

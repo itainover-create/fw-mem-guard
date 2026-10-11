@@ -69,3 +69,21 @@ confidence, source-line causality, or peak heap/stack usage.
 
 The full CLI report can contain local object and archive paths. The editor's
 reduced sharing export continues to omit them. Neither output uploads itself.
+
+## Machine-readable schema and breaking changes
+
+The public JSON Schema is [schema/v1.json](https://itainover-create.github.io/fw-mem-guard/schema/v1.json).
+Validate with a Draft 2020-12 validator. Unknown optional fields are allowed.
+The schema describes compare results only; errors produce no JSON report.
+
+Removing or renaming a field, changing its type, units, nullability or meaning,
+and adding a value to a closed enum (including status) require a new schemaVersion.
+Requiring a previously optional field also breaks the existing v1 producer contract.
+Status remains exactly pass or budget_exceeded; error is an Action output, not
+a successful compare-report status. The Action spells its budget output
+budget-exceeded, while the CLI JSON retains budget_exceeded for compatibility.
+
+Schema validation checks structure, not arithmetic. Consumers enforcing budgets
+must also validate current minus baseline, contributor conservation and agreement
+between the report status and CLI exit code. New schemas never silently reinterpret
+old reports.
