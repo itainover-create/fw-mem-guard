@@ -34,4 +34,4 @@ The Pages workflow stages only the explicit documentation/media allowlist. There
 
 ## GitHub Action (next release)
 
-See [Action setup](action/README.md) and the [CLI JSON contract](CLI_JSON.md). The 0.3.5 Action becomes usable when its matching compiled CLI asset is published.
+The Action is being prepared in a separate repository, `itainover-create/fw-mem-guard-action`. It is not yet publicly released. This documentation/download repository is not an Action; do not use it in a workflow's `uses:` field. See the [CLI JSON contract](CLI_JSON.md).
