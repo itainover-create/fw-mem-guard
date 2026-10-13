@@ -1,0 +1,51 @@
+name: Remove verified duplicate 0.3.7 tag
+on:
+  push:
+    branches: [main]
+    paths: [.github/workflows/remove-duplicate-tag.yml]
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: remove-duplicate-037-tag
+  cancel-in-progress: false
+jobs:
+  cleanup:
+    if: github.repository == 'itainover-create/fw-mem-guard' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - name: Verify canonical release and remove only the duplicate tag
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const repo = {owner: 'itainover-create', repo: 'fw-mem-guard'};
+            const expected = 'e9482b17f8392a83cb819336fbf8c9d5fa46b63b';
+            const canonical = await github.rest.git.getRef({...repo, ref: 'tags/v0.3.7'});
+            if (canonical.data.object.type !== 'commit' || canonical.data.object.sha !== expected)
+              throw new Error('Canonical tag changed; no deletion performed');
+            const release = await github.rest.repos.getReleaseByTag({...repo, tag: 'v0.3.7'});
+            if (release.data.id !== 410979261 || release.data.draft || !release.data.prerelease)
+              throw new Error('Canonical release identity changed; no deletion performed');
+            try {
+              await github.rest.repos.getReleaseByTag({...repo, tag: 'Ver_0.3.7'});
+              throw new Error('Duplicate has a release; requires separate review, no deletion performed');
+            } catch (e) { if (e.status !== 404) throw e; }
+            let duplicate;
+            try { duplicate = await github.rest.git.getRef({...repo, ref: 'tags/Ver_0.3.7'}); }
+            catch (e) {
+              if (e.status !== 404) throw e;
+              await core.summary.addRaw('Duplicate tag is already absent. Canonical v0.3.7 release retained.').write();
+              return;
+            }
+            if (duplicate.data.object.type !== 'commit' || duplicate.data.object.sha !== expected)
+              throw new Error('Duplicate tag changed; no deletion performed');
+            await github.rest.git.deleteRef({...repo, ref: 'tags/Ver_0.3.7'});
+            try {
+              await github.rest.git.getRef({...repo, ref: 'tags/Ver_0.3.7'});
+              throw new Error('Duplicate tag still exists after deletion');
+            } catch (e) { if (e.status !== 404) throw e; }
+            const retained = await github.rest.repos.getReleaseByTag({...repo, tag: 'v0.3.7'});
+            if (retained.data.id !== release.data.id)
+              throw new Error('Canonical release changed during verification');
+            await core.summary.addRaw('Removed only Ver_0.3.7. Canonical v0.3.7 and all release assets retained.').write();
