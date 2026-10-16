@@ -1,0 +1,30 @@
+{
+  "phase": "baseline",
+  "directory": "build/zephyr",
+  "recommendedPair": [
+    "zephyr.map",
+    "zephyr.elf"
+  ],
+  "observedOutputs": {
+    "zephyr.elf": {
+      "bytes": 309412,
+      "sha256": "b95aca8637c4fc866d6eb159fcea030fda340961ce1c356a0bb166f0b757aca4"
+    },
+    "zephyr.map": {
+      "bytes": 204369,
+      "sha256": "38e36209d4bffccea84d9d986f796f35991db0157c905da0b64669360f7941c6"
+    },
+    "zephyr_final.map": {
+      "bytes": 204369,
+      "sha256": "38e36209d4bffccea84d9d986f796f35991db0157c905da0b64669360f7941c6"
+    },
+    "zephyr_pre0.elf": {
+      "bytes": 309676,
+      "sha256": "ee0de07b6edb2f21ab2e51f1200ed72b558bfca69f917b79f9e47baa54b57c9c"
+    },
+    "zephyr_pre0.map": {
+      "bytes": 204648,
+      "sha256": "f889e14698ebbf314914554b9c6e3a509e71dd5516858e28ab9f610f2f70dd76"
+    }
+  }
+}

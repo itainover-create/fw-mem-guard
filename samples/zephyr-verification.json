@@ -1,0 +1,55 @@
+{
+  "status": "PASS",
+  "sourceCommit": "36940db938a8f4a1e919496793ed439850a221c2",
+  "board": "qemu_cortex_m3",
+  "expectedOwnerDelta": {
+    "app/libapp.a(main.c.obj)": {
+      "ram": 256
+    }
+  },
+  "independentTotals": {
+    "baseline": {
+      "flash": 8778,
+      "ram": 4312
+    },
+    "current": {
+      "flash": 8778,
+      "ram": 4568
+    }
+  },
+  "negativeControls": [
+    "one-byte-reference",
+    "one-byte-attribution",
+    "wrong-owner"
+  ],
+  "sha256": {
+    "current-symbols.txt": "1f7cb5939eb511b4116503257d74214237a4dda5c4870d9b3dc181d11f7072d2",
+    "current-objdump.txt": "a8c37891f7dfcc5989d059360395bbc9550d75b2830b2b441576f6958f2173fb",
+    "pass-profile.json": "737f0d8926bc255aa1504eee40bbb48f423a7bbe05bbda5cb21d16e3c06f198a",
+    "submodules.txt": "67c83c4d21d3cfc56e644a2df8c5788c3825eaa0e9e0aeb3465476dff326cb3e",
+    "restored.json": "a8d81ec2f1562f5cf8271a7b918778647a7014aba971e4a30a8026ee30c3b9b4",
+    "current-link-outputs.json": "e00a418f54f7609d4b201e7e486f891f36067f4a90055aa991015cb6e06836b1",
+    "ram-growth-255-stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "ZEPHYR_LICENSE": "c6596eb7be8581c18be736c846fb9173b69eccf6ef94c5135893ec56bd92ba08",
+    "current.elf": "deae2bf47501fa96f442819069129cca9f85d303c20d0eb40cbe7374c9a794d6",
+    "zephyr.config": "32dcd9fcb8f05143d54c28e48310003603911b79bf83e3525b4338af86606465",
+    "pass-stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "ram-growth-255.json": "a4bd6868e98f6f5c207d0868f98a0b612136cd5f56ccb92ebbcb838af5e571e6",
+    "independent-reference.json": "d30fb6822f2adb43d7348029657df5e79913b72c929ce52d6e686c9dfbe22a95",
+    "restored-profile.json": "737f0d8926bc255aa1504eee40bbb48f423a7bbe05bbda5cb21d16e3c06f198a",
+    "compiler.txt": "b54e2bdf7dd076e6040d0a556d352f8e921ba39555d189e92adcbc35cd917660",
+    "ram-growth-255-profile.json": "91042577d01e42c1de5e56ee03f3f5084eb8c9346d62fd546ca8993401c268a9",
+    "baseline-objdump.txt": "2f3897ae1115d7c6b25ff5cd43605e1d56debd20217916fc5dfba36fcbdf41e8",
+    "baseline-link-outputs.json": "bb2168177563026c6e10ace37668a89ae7d5fbe3c7ad8157c10951ce8afd76da",
+    "CMSIS_LICENSE.txt": "b40930bbcf80744c86c46a12bc9da056641d722716c378f5659b9e555ef833e1",
+    "profile.json": "20280576c3c1aa493a7a42db072b3b28df72a286d8503067b0b7f1273c9a5db8",
+    "pass.json": "a8d81ec2f1562f5cf8271a7b918778647a7014aba971e4a30a8026ee30c3b9b4",
+    "baseline-symbols.txt": "4f37c60f16e22f0ef30fed7f766a13a7267e5db2c1ac8e10ed6bd187ba21bc89",
+    "report.json": "a8d81ec2f1562f5cf8271a7b918778647a7014aba971e4a30a8026ee30c3b9b4",
+    "baseline.elf": "b95aca8637c4fc866d6eb159fcea030fda340961ce1c356a0bb166f0b757aca4",
+    "current.map": "a5b038ba50dae7a2dc2479576631f1c00c2297ad7e6507aed7e9e330f028a158",
+    "baseline.map": "38e36209d4bffccea84d9d986f796f35991db0157c905da0b64669360f7941c6",
+    "restored-stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "linker.txt": "9d5a93d1c8dc4479b2a3aafcca4adf7df52b612994b3e868319d1e7105bdba15"
+  }
+}
