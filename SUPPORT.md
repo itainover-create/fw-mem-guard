@@ -2,7 +2,7 @@
 
 # FW Mem Guard Support
 
-Help with installation, project setup and Flash/RAM comparisons. Guide for the 0.3.3 pre-release; engine 0.1.0-pilot.1.
+Help with installation, project setup and Flash/RAM comparisons. Guide for the 0.3.7 pre-release; engine 0.2.1-pilot.1.
 
 <div class="contact">
 
@@ -45,7 +45,7 @@ Review paths and identifiers before sharing. Start with the diagnostic text. Do 
 
 ## Preview scope
 
-Local Windows x64 and macOS Intel/Apple Silicon (native CLI/package checks on macOS 15.7.9; macOS 13/14 unverified); guided WSL access on Windows. GNU ld Map with GNU Arm ELF32 little-endian, one active Flash and one active RAM region. Maximum 64 MiB per ELF and 32 MiB per Map. Remote-SSH, Dev Containers, Codespaces, Linux-native execution, IAR/Keil and object/symbol attribution are not supported.
+Local Windows x64 and macOS Intel/Apple Silicon (native CLI/package checks on macOS 15.7.9; macOS 13/14 unverified); guided WSL access on Windows. GNU ld Map with GNU Arm ELF32 little-endian, one or more explicitly selected non-overlapping Flash/RAM banks, with aggregate and per-bank budgets. Maximum 64 MiB per ELF and 32 MiB per Map. Remote-SSH, Dev Containers, Codespaces, a Linux VSIX, IAR/Keil and symbol attribution are not supported. Linux CLI/CI and conservative object/archive attribution are available.
 
 <span class="small">Publisher: FW Mem Guard · Extension ID: fwmemguard.fw-mem-guard · Local processing; no automatic telemetry or report upload. Use the support address below or the public issue forms.</span>
 

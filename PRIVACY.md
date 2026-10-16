@@ -1,4 +1,4 @@
-# FW Mem Guard 0.3.3 — data handling
+# FW Mem Guard — data handling
 
 The bundled engine executes locally on the VS Code desktop host. FW Mem Guard has no telemetry client, account, license server or cloud upload feature.
 

@@ -2,19 +2,18 @@
 <html lang="en" dir="ltr">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>FW Mem Guard 0.3.3 — Quick Start</title>
-<style>body{font:17px/1.65 system-ui,sans-serif;max-width:960px;margin:35px auto;padding:0 24px;color:#14283b;background:#f7f9fc}h1,h2{line-height:1.25}h2{margin-top:32px}pre{direction:ltr;text-align:left;white-space:pre-wrap;overflow-wrap:anywhere;background:#e8eef5;padding:16px;border-radius:9px}code{font-family:Consolas,monospace;overflow-wrap:anywhere}table{border-collapse:collapse;width:100%}td,th{border:1px solid #c8d2df;padding:8px;text-align:start}a{color:#1453a0}.note{border-inline-start:4px solid #d88b16;padding:12px;background:#fff2d8}li{margin:8px 0}</style>
+<title>FW Mem Guard 0.3.7 — Quick Start</title>
+<style>body{font:17px/1.65 system-ui,sans-serif;max-width:960px;margin:35px auto;padding:0 24px;color:#14283b;background:#f7f9fc}h1,h2{line-height:1.25}h2{margin-top:32px}pre{direction:ltr;text-align:left;white-space:pre-wrap;overflow-wrap:anywhere;background:#e8eef5;padding:16px;border-radius:9px}code{font-family:Consolas,monospace}table{border-collapse:collapse;width:100%}td,th{border:1px solid #c8d2df;padding:8px;text-align:start}a{color:#1453a0}.note{border-inline-start:4px solid #d88b16;padding:12px;background:#fff2d8}li{margin:8px 0}</style>
 <body>
-<nav aria-label="Documentation"><a href="index.html">FW Mem Guard</a> · <a href="START_HERE_EN.html">English</a> · <a href="SUPPORT.html">Support</a></nav>
-<h1>FW Mem Guard 0.3.3 — Quick Start</h1>
+<h1>FW Mem Guard 0.3.7 — Quick Start</h1>
 <p>
 <b>Help inside VS Code:</b> Open the Command Palette → <code>FW Mem Guard: Open User Guide</code>, then choose English or Support. No browser or internet connection is needed.</p>
 <p>
 <b>Publisher: FW Mem Guard — <code>fwmemguard</code>.</b> Extension ID: <code>fwmemguard.fw-mem-guard</code>. Disable the old <code>fw-mem-guard-pilot.fw-mem-guard</code> extension if installed, then use Open Project to reopen your existing project file. Previous workspace selections may not carry over. Project files remain unchanged.</p>
 <p>Install the VS Code extension, then compare completed firmware builds. No Python or separate installer is required.</p>
-<p>This guide accompanies the 0.3.3 pre-release packages for Windows x64, Mac Apple Silicon and Mac Intel. The extension and engine 0.1.0-pilot.1 have separate version numbers.</p>
+<p>This guide accompanies the 0.3.7 packages for Windows x64, Mac Apple Silicon and Mac Intel. The extension and engine 0.2.1-pilot.1 have separate version numbers.</p>
 <h2>1. Install the right package</h2>
-<p>Search for <code>fwmemguard.fw-mem-guard</code> in VS Code Extensions and select the pre-release offered by the Marketplace. For a supplied candidate, use Install from VSIX with the matching file below.</p>
+<p>Search for <code>fwmemguard.fw-mem-guard</code> in VS Code Extensions and select the pre-release. For a supplied package, use Install from VSIX with the matching file below.</p>
 <table>
 <tr>
 <th>Computer</th>
@@ -23,23 +22,23 @@
 <tr>
 <td>Windows x64</td>
 <td>
-<code>fw-mem-guard-0.3.3-win32-x64.vsix</code>
+<code>fw-mem-guard-0.3.7-win32-x64.vsix</code>
 </td>
 </tr>
 <tr>
 <td>Mac Apple Silicon</td>
 <td>
-<code>fw-mem-guard-0.3.3-darwin-arm64.vsix</code>
+<code>fw-mem-guard-0.3.7-darwin-arm64.vsix</code>
 </td>
 </tr>
 <tr>
 <td>Mac Intel</td>
 <td>
-<code>fw-mem-guard-0.3.3-darwin-x64.vsix</code>
+<code>fw-mem-guard-0.3.7-darwin-x64.vsix</code>
 </td>
 </tr>
 </table>
-<p>Mac native command-line and package checks passed on macOS 15.7.9. Compatibility with macOS 13/14 remains unverified; the 0.3.3 package metadata and bundled guide still declare a 15.0 target. See <a href="index.html#scope">Mac validation details</a>. In VS Code choose Extensions → … → Install from VSIX, select the matching file, and reload if requested. Confirm version 0.3.3. On WSL, choose the Windows package for the local Windows host.</p>
+<p>For macOS packages, macOS 15 or later is required. In VS Code choose Extensions → … → Install from VSIX, select the matching file, and reload if requested. Confirm version 0.3.7. On WSL, choose the Windows package for the local Windows host.</p>
 <p>If the binary is blocked by security policy, stop and share the error. Do not disable protections or change quarantine settings.</p>
 <h2>2. Run the example</h2>
 <p>Open a folder you control and trust it when prompted. Press Ctrl+Shift+P (Mac: Cmd+Shift+P) and run <b>FW Mem Guard: Run Demo</b>. Expected: BUDGET_EXCEEDED, engine exit 2. The example intentionally exceeds its limits and is not validation of your project.</p>
@@ -79,7 +78,7 @@
 <p>Demo reports remain labeled examples; Analyze has no budget verdict. A new project/profile operation clears the exportable result, including failure or cancellation. Help and Output preserve it. After a reload, run again. Previously opened or saved reports remain static snapshots and do not update automatically.</p>
 <h2>Limits and troubleshooting</h2>
 <p>For support after a completed run, use <b>Export Report for Sharing</b>, review the new editor tab, then save and attach the reduced report to an email using the address on the Support page. A failed run has no new export: describe the error and review any diagnostic text before sending it. Do not attach Map/ELF files or source code.</p>
-<p>64 MiB per ELF; 32 MiB per Map. GNU Arm ELF32 little-endian + GNU ld. One Flash and one RAM bank. No SSH, Containers, Linux native, IAR/Keil, or object/symbol attribution. Full ELF files are read, including debug data; do not strip artifacts just to bypass validation limits.</p>
+<p>64 MiB per ELF; 32 MiB per Map. GNU Arm ELF32 little-endian + GNU ld. One or more explicit, non-overlapping Flash/RAM banks. Schema 2 adds per-bank budgets. Object/archive contribution ranges and unattributed residuals are available; symbol attribution is not. Linux CI uses a separate compiled CLI package; the VS Code extension still has no Linux-native package. No SSH, Containers or IAR/Keil. Full ELF files are read, including debug data; do not strip artifacts just to bypass validation limits.</p>
 <p>Mismatch: select Map/ELF from the same completed build. Missing/empty file: fix the build inputs and repeat. Existing project: Open Project, then Edit Budgets. Trust error: approve only a folder you control using Workspaces: Manage Workspace Trust. Open Output for full diagnostics.</p>
 <p>Manual Profile Comparison requires a reviewed engine JSON, not a .fwmg.json project, and is local-only. Guided WSL use does not require a UNC allowlist. For the optional local-window UNC route, allow only the specific WSL host in security.allowedUNCHosts and keep UNC restrictions enabled.</p>
 <!-- PUBLIC_SUPPORT_START -->
@@ -101,8 +100,8 @@ RAM allocated sections: 203,776 &lt;= 262,144 bytes — OK
 RAM growth: 27,136 &gt; 4,096 bytes — EXCEEDED
 
 Accounting: configured linker profile; allocated output-section bytes.
-Object/symbol attribution: not available.</pre>
-<p>Bundled demo data. The report prints each checked value and limit. Initialized RAM is counted once in RAM and once for its Flash load image. Heap/stack reservations are not measured runtime usage. Structural Map/ELF agreement does not establish common build provenance or an atomic snapshot. Guided validation is currently in the extension, not a standalone Map/ELF CLI contract.</p>
+Object/symbol attribution: not available in this manual-profile example.</pre>
+<p>Bundled demo data. The report prints each checked value and limit. Initialized RAM is counted once in RAM and once for its Flash load image. Heap/stack reservations are not measured runtime usage. Structural Map/ELF agreement does not establish common build provenance or an atomic snapshot. The separate Linux CLI uses the same saved-project validation; see the CLI guide.</p>
 <p>Support opens its own bundled page through Open User Guide → Support. Copy the support address into your email service; no reports, telemetry or firmware files are uploaded automatically.</p>
-<p><a href="TRY_IT.html">First comparison, compatibility and repeat-use trial</a></p><section><h2>Zephyr file selection</h2><p>Choose the final <code>build/zephyr/zephyr.map</code> and <code>build/zephyr/zephyr.elf</code> from each completed build. Do not select <code>zephyr_pre0.*</code>, <code>zephyr_pre1.*</code> or other intermediate linker outputs. Use matching files from the same image and build. A custom build directory changes the parent path.</p></section></body>
+<section><h2>Multiple banks and CI</h2><p>Project setup now supports explicit multiple Flash/RAM banks and per-bank budgets. The results panel includes conservative GNU object/archive contributions and unattributed bytes. See <a href="https://github.com/itainover-create/fw-mem-guard/releases/download/v0.3.7/CLI_CI.md">Linux CLI and CI instructions</a> for schema 2, the headless command and its release boundary.</p></section><section><h2>Zephyr file selection</h2><p>Choose the final <code>build/zephyr/zephyr.map</code> and <code>build/zephyr/zephyr.elf</code> from each completed build. Do not select <code>zephyr_pre0.*</code>, <code>zephyr_pre1.*</code> or other intermediate linker outputs. Use matching files from the same image and build. A custom build directory changes the parent path.</p></section></body>
 </html>

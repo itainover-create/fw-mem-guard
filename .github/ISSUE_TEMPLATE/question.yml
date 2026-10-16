@@ -1,5 +1,5 @@
-name: Usage question
-description: Ask about setup, budgets or interpreting a report.
+name: First-run feedback or usage question
+description: Tell us whether your own-project comparison worked, or ask about a blocker.
 body:
   - type: markdown
     attributes:
@@ -11,3 +11,39 @@ body:
       description: Your goal, installed extension version, platform, command and relevant diagnostic text with private paths removed.
     validations:
       required: true
+  - type: input
+    id: installed_version
+    attributes:
+      label: Installed extension or CLI version
+      placeholder: Copy the actual installed version
+  - type: dropdown
+    id: host
+    attributes:
+      label: Host environment
+      options:
+        - Windows x64
+        - Windows with WSL guided workflow
+        - macOS Apple Silicon
+        - macOS Intel
+        - Linux x64 CLI or CI
+        - Other or unsure
+  - type: input
+    id: toolchain
+    attributes:
+      label: Firmware architecture, toolchain and build environment
+      placeholder: Board/CPU, linker/compiler version and IDE or SDK; omit private project names
+  - type: dropdown
+    id: outcome
+    attributes:
+      label: What did you reach?
+      options:
+        - Bundled example only
+        - Own-project comparison produced a useful result
+        - Returned for another own-project comparison
+        - Blocked before a useful result
+        - Usage question without a trial
+  - type: input
+    id: banks
+    attributes:
+      label: Active Flash and RAM banks, if known
+      placeholder: For example, 1 Flash and 2 RAM banks
