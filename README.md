@@ -1,5 +1,15 @@
 # FW Mem Guard — public documentation
 
+## Verified firmware examples
+
+| Firmware | Exact configuration | Independently checked growth |
+|---|---|---|
+| MicroPython v1.24.1 | `NUCLEO_F411RE`, STM32F411RE / Arm Cortex-M4; GNU Arm; source `ecfdd5d6f9be971852003c2049600dc7b3e2a838` | Flash +8,240 B; RAM +4,096 B |
+| Zephyr v3.7.0 | `qemu_cortex_m3`, Arm Cortex-M3; `gnuarmemb`; source `36940db938a8f4a1e919496793ed439850a221c2` | Flash +0 B; RAM +256 B, attributed to `app/libapp.a(main.c.obj)` |
+
+These are allocated-memory checks on exact paired builds, not hardware execution or blanket certification of all boards, IDEs, Zephyr configurations or nRF Connect SDK. [Evidence and file selection](https://itainover-create.github.io/fw-mem-guard/REAL_FIRMWARE.html#zephyr).
+
+
 **VS Code extension:** Windows x64; macOS 15+ on Apple Silicon or Intel. **Linux x64:** separate CLI / CI package targeting glibc 2.28+, tested on Rocky Linux 8 and Ubuntu 24.04 with Node.js 22 and 24; no Linux VSIX. Public CLI download publication is pending.
 
 **Your build grew. Know by how much.** Compare firmware Flash/RAM and check your chosen budgets locally in VS Code.

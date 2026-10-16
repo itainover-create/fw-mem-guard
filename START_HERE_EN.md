@@ -104,3 +104,11 @@ If the pending-read message persists, save your work and run Developer: Reload W
 Bundled demo data. The report prints each checked value and limit. Initialized RAM is counted once in RAM and once for its Flash load image. Heap/stack reservations are not measured runtime usage. Structural Map/ELF agreement does not establish common build provenance or an atomic snapshot. Guided validation is currently in the extension, not a standalone Map/ELF CLI contract.
 
 Support opens its own bundled page through Open User Guide → Support. Copy the support address into your email service; no reports, telemetry or firmware files are uploaded automatically.
+
+## Zephyr: select the final link outputs
+
+For each completed baseline/current build, select `build/zephyr/zephyr.map` together with `build/zephyr/zephyr.elf` from that same build. A custom build directory or sysbuild image changes the parent path; select the final pair within that image's `zephyr` directory.
+
+`zephyr_pre0.*`, `zephyr_pre1.*` and other `zephyr_pre*` files are intermediate linker stages. Do not combine them with the final files, even when their timestamps are close. Do not combine files from different images or builds. FW Mem Guard never substitutes paths automatically. File names alone do not establish provenance: existing MAP/ELF structural checks still apply, and renamed intermediate files cannot be identified reliably by their names.
+
+The next extension/CLI release adds an early, focused error for recognized intermediate filenames. In 0.3.7, a mixed pair may instead produce the general MAP/ELF mismatch diagnostic; reselect the final pair and rerun comparison.
