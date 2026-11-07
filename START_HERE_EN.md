@@ -9,6 +9,13 @@ Evaluation pre-release. Processing stays local; there is no automatic firmware u
 - Linux x64: separate compiled CLI/CI package, glibc 2.28+ and documented dependencies; Node.js 22 or 24. There is no Linux VSIX.
 - Remote-SSH, Dev Containers and browser execution are not supported.
 
+## Install a VSIX on Mac
+
+1. Open **Code > About** and check that VS Code is **1.85 or later**. Update VS Code if needed.
+2. In Extensions, uninstall any earlier FW Mem Guard version before choosing **Extensions > … > Install from VSIX**. Select the package for your Mac (Apple Silicon or Intel), then reload if requested.
+3. Open a folder you control and trust it. **Restricted Mode** disables FW Mem Guard; use **Workspaces: Manage Workspace Trust** for that folder.
+4. If installation or launch is blocked, send the **exact message** and **Code > About > Copy** text. Review the text for private information before sharing it.
+
 ## First useful result
 
 1. Install fwmemguard.fw-mem-guard and select the pre-release. Trust only a workspace you control.

@@ -9,10 +9,17 @@
 <p>
 <b>Help inside VS Code:</b> Open the Command Palette → <code>FW Mem Guard: Open User Guide</code>, then choose English or Support. No browser or internet connection is needed.</p>
 <p>
-<b>Publisher: FW Mem Guard — <code>fwmemguard</code>.</b> Extension ID: <code>fwmemguard.fw-mem-guard</code>. Disable the old <code>fw-mem-guard-pilot.fw-mem-guard</code> extension if installed, then use Open Project to reopen your existing project file. Previous workspace selections may not carry over. Project files remain unchanged.</p>
+<b>Publisher: FW Mem Guard — <code>fwmemguard</code>.</b> Extension ID: <code>fwmemguard.fw-mem-guard</code>. For a Mac VSIX install, uninstall the old <code>fw-mem-guard-pilot.fw-mem-guard</code> extension if installed; on other hosts, disable it. Use Open Project to reopen your existing project file. Previous workspace selections may not carry over. Project files remain unchanged.</p>
 <p>Install the VS Code extension, then compare completed firmware builds. No Python or separate installer is required.</p>
 <p>This guide accompanies the 0.3.7 packages for Windows x64, Mac Apple Silicon and Mac Intel. The extension and engine 0.2.1-pilot.1 have separate version numbers.</p>
 <h2>1. Install the right package</h2>
+<h3>Mac: check VS Code before installing a VSIX</h3>
+<ol>
+<li>Open <b>Code &gt; About</b> and check that VS Code is <b>1.85 or later</b>. Update VS Code if needed.</li>
+<li>In Extensions, uninstall any earlier FW Mem Guard version. Then choose <b>Extensions &gt; … &gt; Install from VSIX</b>, select the package for your Mac (Apple Silicon or Intel), and reload if requested.</li>
+<li>Open a folder you control and trust it. <b>Restricted Mode</b> disables FW Mem Guard; use <b>Workspaces: Manage Workspace Trust</b> for that folder.</li>
+<li>If installation or launch is blocked, send the <b>exact message</b> and the text from <b>Code &gt; About &gt; Copy</b>. Review the text for private information before sharing it.</li>
+</ol>
 <p>Search for <code>fwmemguard.fw-mem-guard</code> in VS Code Extensions and select the pre-release. For a supplied package, use Install from VSIX with the matching file below.</p>
 <table>
 <tr>
